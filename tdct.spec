@@ -41,8 +41,8 @@ EPICS is a set of Open Source software tools, Vlibraries and applications develo
 %build
 
 %install
-mkdir -p ${buildroot}/%{_prefix}
-cp -r %{_builddir}/tdct-%{release} ${buildroot}/%{_prefix}/%{name}
+mkdir -p %{buildroot}/%{_prefix}
+cp -r %{_builddir}/tdct-%{release} %{buildroot}/%{_prefix}/%{name}
 
 %post
 
@@ -50,7 +50,7 @@ cp -r %{_builddir}/tdct-%{release} ${buildroot}/%{_prefix}/%{name}
 
 %clean
 ## Usually you won't do much more here than
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
