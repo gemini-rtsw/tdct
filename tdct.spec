@@ -1,6 +1,6 @@
 %define _prefix /gem_base/epics/extensions/src
 %define gemopt opt
-%define version 3.15.8/
+%define version 3.15.8
 %define name tdct
 %define release 2.17.5
 %define repository gemdev
