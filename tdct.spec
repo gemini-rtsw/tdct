@@ -41,8 +41,8 @@ EPICS is a set of Open Source software tools, Vlibraries and applications develo
 %build
 
 %install
-mkdir -p $RPM_BUILD_ROOT/%{_prefix}
-cp -r tdct-%{release} $RPM_BUILD_ROOT/%{_prefix}/%{name}
+mkdir -p ${buildroot}/%{_prefix}
+cp -r %{_builddir}/tdct-%{release} ${buildroot}/%{_prefix}/%{name}
 
 %post
 
