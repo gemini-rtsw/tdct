@@ -1,0 +1,122 @@
+[symbol2]
+bbox -32 32 608 544
+port 0 192 -100 1024 U6 symbol 1 -32 192 0
+port 0 256 -100 1024 U5 symbol 1 -32 256 0
+port 0 320 -100 1024 U4 symbol 1 -32 320 0
+port 0 384 100 1024 DOL symbol 1 -32 384 0
+port 576 64 -100 1024 U3 symbol 2 608 64 0
+port 576 128 -100 1024 U2 symbol 2 608 128 0
+port 576 192 -100 1024 U1 symbol 2 608 192 0
+port 576 256 -100 1024 U0 symbol 2 608 256 0
+port 576 384 100 1024 FLNK symbol 2 608 384 0
+port 0 128 100 1024 SLNK symbol 1 -32 128 0
+port 0 64 100 1024 SDIS symbol 1 -32 64 0
+port 576 320 100 1024 OUT symbol 2 608 320 0
+uniq 11
+[tools]
+[attributes]
+p 280 450 100 0 0 primitive:ewaveout
+p 96 366 100 0 1 SCAN:Passive
+p 96 334 100 0 1 PHAS:0
+p 96 302 100 0 1 EVNT:0
+p 230 518 100 0 -1 Type:waveout
+p 96 270 100 0 1 PINI:NO
+p 96 110 100 0 1 DISV:1
+p 213 489 100 0 -1 DTYP:Soft Channel
+p 96 174 100 0 1 DISV:1
+p 320 334 100 0 1 EGU:units
+p 320 270 100 0 1 NELM:1
+p 320 238 100 0 1 FTVL:STRING
+p 320 206 100 0 1 SIOL:0.0000000e+00
+p 320 302 100 0 1 SIML:0.0000000e+00
+p 320 110 100 0 1 SIMS:0.0000000e+00
+p 320 174 100 0 1 HOPR:0.0000000e+00
+p 320 142 100 0 1 LOPR:0.0000000e+00
+p 96 206 100 0 1 PREC:0
+p 96 142 100 0 1 DISS:NO_ALARM
+p 96 238 100 0 1 PRIO:LOW
+p 199 440 100 0 -1 DESC:waveout record
+p 96 -82 100 0 0 def(FLNK):0.000000000000000e+00
+p 80 0 100 1024 0 name:$(top)$(I)
+p 96 -100 100 0 0 typ(FLNK):path
+p 96 -196 100 0 0 def(SDIS):0.000000000000000e+00
+p 96 -228 100 0 0 typ(SDIS):path
+p -64 64 75 1280 -1 pproc(SDIS):NPP
+p -32 64 75 1280 -1 palrm(SDIS):NMS
+p 576 256 100 1024 -1 username(U0):FLD0
+p 576 192 100 1024 -1 username(U1):FLD1
+p 576 128 100 1024 -1 username(U2):FLD2
+p 576 64 100 1024 -1 username(U3):FLD3
+p 0 320 100 1024 -1 username(U4):FLD4
+p 0 256 100 1024 -1 username(U5):FLD5
+p 0 192 100 1024 -1 username(U6):FLD6
+p -32 384 75 1280 -1 palrm(DOL):NMS
+p -64 384 75 1280 -1 pproc(DOL):NPP
+p 96 -324 100 0 0 def(DOL):0.000000000000000e+00
+p 96 -356 100 0 0 typ(DOL):path
+p 320 366 100 0 1 OMSL:supervisory
+p 96 78 100 0 1 HEAD:
+p 608 320 75 768 -1 pproc(OUT):NPP
+p 640 320 75 768 -1 palrm(OUT):NMS
+p 96 -516 100 0 0 def(OUT):0.000000000000000e+00
+p 96 -548 100 0 0 typ(OUT):path
+p -32 192 75 1280 0 palrm(U6):NMS
+p -64 192 75 1280 0 pproc(U6):NPP
+p -32 256 75 1280 0 palrm(U5):NMS
+p -64 256 75 1280 0 pproc(U5):NPP
+p -32 320 75 1280 0 palrm(U4):NMS
+p -64 320 75 1280 0 pproc(U4):NPP
+p 608 64 75 768 0 palrm(U3):NMS
+p 640 64 75 768 0 pproc(U3):NPP
+p 608 128 75 768 0 palrm(U2):NMS
+p 640 128 75 768 0 pproc(U2):NPP
+p 608 192 75 768 0 palrm(U1):NMS
+p 640 192 75 768 0 pproc(U1):NPP
+p 608 256 75 768 0 palrm(U0):NMS
+p 640 256 75 768 0 pproc(U0):NPP
+[layers]
+<symbol>
+r 0 32 32 544 544
+v 0 -32 192
+32 192
+_
+v 0 -32 256
+32 256
+_
+v 0 -32 320
+32 320
+_
+v 0 32 480
+544 480
+_
+v 0 -32 384
+32 384
+_
+v 0 -32 64
+32 64
+_
+v 0 -32 128
+32 128
+_
+v 0 32 416
+544 416
+_
+v 0 544 384
+608 384
+_
+v 0 544 256
+608 256
+_
+v 0 544 192
+608 192
+_
+v 0 544 128
+608 128
+_
+v 0 544 64
+608 64
+_
+v 0 544 320
+608 320
+_
+[comments]

@@ -1,0 +1,115 @@
+[symbol2]
+bbox 128 192 384 448
+port 168 384 100 1024 SLNK symbol 1 128 384 0
+port 352 384 100 1024 VAL symbol 3 384 384 0
+port 352 416 100 1024 FLNK symbol 2 384 416 0
+port 160 416 100 1024 DOL symbol 1 128 416 0
+port 160 352 -100 1024 U0 symbol 1 128 352 0
+port 352 320 100 1024 SIOL symbol 2 384 320 0
+port 160 320 -100 1024 U1 symbol 1 128 320 0
+port 168 256 100 1024 SIML symbol 1 128 256 0
+port 168 224 100 1024 SDIS symbol 1 128 224 0
+port 96 288 -100 1024 U2 symbol 1 128 288 0
+port 352 352 100 1024 OUT symbol 2 384 352 0
+port 352 288 -100 1024 U3 symbol 2 384 288 0
+uniq 15
+[tools]
+[attributes]
+p 155 440 100 0 0 DESC:string output record
+p 288 302 100 0 0 DISS:NO_ALARM
+p 288 238 100 0 0 DISV:1
+p 205 488 100 0 0 DTYP:Soft Channel
+p 64 270 100 0 0 EVNT:0
+p 64 174 100 0 0 IVOA:Continue normally
+p 64 142 100 0 0 IVOV:
+p 64 206 100 0 0 OMSL:supervisory
+p 64 302 100 0 0 PHAS:0
+p 64 238 100 0 0 PINI:NO
+p 288 270 100 0 0 PRIO:LOW
+p 64 334 100 0 0 SCAN:Passive
+p 64 46 100 0 0 SIMS:NO_ALARM
+p 240 160 100 1024 0 name:$(top)$(I)
+p 206 318 100 0 -1 Type:stringout
+p 64 366 100 0 0 VAL:string
+p 96 -164 100 0 0 def(DOL):0.000000000000000e+00
+p 92 -78 100 0 0 def(FLNK):0.000000000000000e+00
+p 96 -166 100 0 0 def(OUT):0.000000000000000e+00
+p 96 -198 100 0 0 def(SDIS):0.000000000000000e+00
+p 96 -592 100 0 0 def(SIML):0.000000000000000e+00
+p 96 -720 100 0 0 def(SIOL):0.000000000000000e+00
+p 88 424 75 1280 -1 palrm(DOL):NMS
+p 88 232 75 1280 -1 palrm(SDIS):NMS
+p 88 264 75 1280 -1 palrm(SIML):NMS
+p 424 360 75 768 -1 palrm(OUT):NMS
+p 424 328 75 768 -1 palrm(SIOL):NMS
+p 56 424 75 1280 -1 pproc(DOL):NPP
+p 56 232 75 1280 -1 pproc(SDIS):NPP
+p 56 264 75 1280 -1 pproc(SIML):NPP
+p 392 360 75 768 -1 pproc(OUT):NPP
+p 392 328 75 768 -1 pproc(SIOL):NPP
+p 208 446 100 0 0 primitive:estringout
+p 96 -132 100 0 0 typ(DOL):path
+p 96 -100 100 0 0 typ(FLNK):path
+p 96 -165 100 0 0 typ(OUT):path
+p 96 -240 100 0 0 typ(SDIS):path
+p 96 -624 100 0 0 typ(SIML):path
+p 96 -752 100 0 0 typ(SIOL):path
+p 136 352 100 1024 -1 username(U0):FLD0
+p 136 320 100 1024 -1 username(U1):FLD1
+p 136 288 100 1024 -1 username(U2):FLD2
+p 328 288 100 1024 -1 username(U3):FLD3
+p 128 352 75 1280 0 palrm(U0):NMS
+p 96 352 75 1280 0 pproc(U0):NPP
+p 128 320 75 1280 0 palrm(U1):NMS
+p 96 320 75 1280 0 pproc(U1):NPP
+p 64 288 75 1280 0 palrm(U2):NMS
+p 32 288 75 1280 0 pproc(U2):NPP
+p 384 288 75 768 0 palrm(U3):NMS
+p 416 288 75 768 0 pproc(U3):NPP
+[layers]
+<symbol>
+v 0 128 384
+192 384
+_
+v 0 320 384
+384 384
+_
+v 0 320 416
+384 416
+_
+v 0 128 416
+192 416
+_
+v 0 128 352
+192 352
+_
+v 0 128 288
+192 288
+_
+v 0 128 320
+192 320
+_
+v 0 128 256
+192 256
+_
+v 0 128 224
+192 224
+_
+v 0 320 320
+384 320
+_
+v 0 320 352
+384 352
+_
+v 0 320 288
+384 288
+_
+v 0 192 448
+192 192
+288 192
+320 224
+320 416
+288 448
+192 448
+_
+[comments]

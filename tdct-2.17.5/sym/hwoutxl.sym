@@ -1,0 +1,22 @@
+[symbol2]
+bbox 541 504 1120 600
+port 588 591 -100 1792 outp symbol 1 544 576 0
+uniq 27
+[tools]
+[attributes]
+p 654 536 100 0 0 primitive:hwout
+p 654 504 100 0 0 typ(outp):val
+p 640 567 100 0 -1 val(outp):@device.proto function(parm) port
+[layers]
+<symbol>
+v 0 608 576
+640 592
+1120 592
+1120 560
+640 560
+608 576
+_
+v 0 544 576
+608 576
+_
+[comments]

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Tdct Online Mode</title><meta content="Rolf Keitel" name="author"></head>
+<body>
+<h2><a name="Tdct_Online_Mode">Tdct Online
+Mode</a></h2>
+<span style="font-family: monospace;"></span><a href="#Display_of_EPICS_PVs">Display of EPICS PVs</a><br>
+<a href="#Writing_to_EPICS_PVs">Writing to EPICS PVs</a><br>
+<a href="#EPICS_Environment">EPICS Environment</a><br>
+<br>
+Tdct can connect to EPICS IOCs and display online data for EPICS PVs.
+If configured, it can also modify PVs in an IOC.<br>
+<br>
+Online mode can be entered from any online enabled tab by selecting the
+<span style="font-style: italic;">Online &gt;&gt;
+Go Online</span> menu. The <span style="font-style: italic;">Online</span>
+menu is only visible if the currently selected tab is online enabled.<br>
+<br>
+A Tab is on-line enabled<br>
+<ul>
+<li>when a schematics is displayed, which does not contain any
+macros</li>
+<li>when a schematics is displayed, which was navigated to by
+descending the schematic hierarchy from an on-line enabled tab.</li>
+</ul>
+At the first attempt to enter online mode during a Tdct session, a
+dialog pops up for the user to confirm the EPICS ports. This is
+implemented as a safeguard to prevent writing inadvertently to a wrong
+IOC.
+<h4><a name="Display_of_EPICS_PVs">Display
+of EPICS PVs</a></h4>
+In on-line mode, EPICS PVs are displayed the following way:<br>
+<ul>
+<li>for each EPICS record, the <span style="font-family: monospace;">VAL</span> field is
+displayed. It is colour-coded based on the records <span style="font-family: monospace;">SEVR</span> field.
+Default colour mapping is</li>
+<ul>
+<li style="font-family: monospace;">NO_ALARM =&gt;
+&nbsp;blue</li>
+<li style="font-family: monospace;">MINOR =&gt;
+yellow</li>
+<li style="font-family: monospace;">MAJOR =&gt; red</li>
+<li><span style="font-family: monospace;">INVALID
+=&gt; white<br>
+</span>Different colours may be defined through the <span style="font-family: monospace;">[color]</span>
+directive in the configuration file.<br>
+</li>
+</ul>
+<li>If other EPICS record fields are displayed on the
+schematics, their online value is displayed.<br>
+If the online value is different from the value configured on the
+schematics (i.e. if the value was modified via Channel Access, dbpf, or
+by tdct), the value background is displayed in dark gray. This
+background color can be defined by a <span style="font-family: monospace;">[color] </span>directive
+in the configuration file.<br>
+<br>
+</li>
+<li>If a property sheet is called up for an EPICS record, the
+field values are read from the EPICS IOC in the "value" column. <br>
+The "edit" column next to the "value" column provides &nbsp;text
+input
+fields or drop-down menus for modifying the field value for fields,
+which can be modified via Channel Access.<br>
+<br>
+<span style="font-weight: bold;">Note: </span>selecting
+a new value from a drop-down menu or terminating a text input field
+with <span style="font-family: monospace;">RETURN</span>
+will <span style="font-weight: bold; color: rgb(204, 0, 0);">immediately</span>
+write the new value to the IOC.</li>
+</ul>
+<h4><br>
+</h4>
+<h4><a name="Writing_to_EPICS_PVs">Writing
+to EPICS PVs</a></h4>
+Writing to PVs must be enabled in the Tdct configuration file with the <span style="font-family: monospace;">[options] write_to_ioc</span>
+&nbsp;directive.<br>
+<br>
+On the property sheet for an EPICS record, the "edit" column next to
+the "value" column provides &nbsp;text input
+fields or drop-down menus as appropriate for the field type.&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Note: </span>selecting
+a new value from a drop-down menu or terminating a text input field
+with <span style="font-family: monospace;">RETURN</span>
+will <span style="font-weight: bold; color: rgb(204, 0, 0);">immediately</span>
+write the new value to the IOC.<br>
+<h4><br>
+</h4>
+<h4><a name="EPICS_Environment">EPICS
+Environment</a></h4>
+The EPICS Channel Access ports can be configured in the Tdct
+configuration file with the <span style="font-family: monospace;">[EPICS
+ports]</span> directive. <br>
+<br>
+If <span style="font-family: monospace;">EPICS_CA_SERVER_PORT</span>
+and <span style="font-family: monospace;">EPICS_CA_REPEATER_PORT</span>
+are defined as environment variables, they override the values from the
+configuration file.<br>
+<br>
+If <span style="font-family: monospace;">EPICS_CA_ADDR_LIST</span>
+is defined as environment variable, it will be used in configuring the
+Channel Access context.<br>
+<br>
+Before the first connect attempt of a Tdct Session, the ports need to
+be confirmed.
+</body></html>

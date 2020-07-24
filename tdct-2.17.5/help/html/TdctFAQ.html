@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Tdct Frequently Asked Questins</title><meta content="Rolf Keitel" name="author"></head>
+<body>
+<h2><a name="Frequently_Asked_Questions">Frequently
+Asked Questions</a></h2>
+<br>
+<a href="#config1">tdct cannot find configuration file</a><br>
+<a href="#nographics">Selection rectangle when dragging
+wire-points<br>
+Build an EPICS database without looking at the schematic</a><br>
+<a href="#hardware_link_field">Error message:
+&lt;record&gt; cannot determine hardware link field</a>
+<span style="text-decoration: underline;"></span><br>
+<br>
+<span style="font-weight: bold;"></span>
+<table style="text-align: left; width: 491px; height: 630px;" border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<th style="vertical-align: top; text-align: left;"><a name="config1"></a>Q:</th>
+<td style="text-align: left;"> tdct pops up a
+message that it
+<a name="cannot_find_the_configuration_file">cannot
+find the configuration file</a></td>
+</tr>
+<tr>
+<th style="vertical-align: top; text-align: left;">A:</th>
+<td>The default configuration file must be
+called&nbsp;tdct.cfg
+and must be <br>
+located in the directory
+&nbsp;&lt;home&gt;/.tdct/ <a href="TdctConfig.html">(more
+details)</a><br>
+Alternatively, the configuration file (and path) can be specified on<br>
+&nbsp;the command line.<br>
+NOTE:<br>
+&nbsp;On Windows systems the .tdct directory cannot be <br>
+established with Windows Explorer. <br>
+You must do it from the DOS box.<br>
+<br>
+</td>
+</tr>
+<tr>
+<th style="vertical-align: top; text-align: left;"><a name="selection1"></a>Q:</th>
+<td>I am in wire-edit mode and try to <a name="drag_a_wire_point_but_get_a_selection_r">drag
+a wire point, but get a selection rectangle</a> instead. If I release the mouse, the display<br>
+&nbsp;zooms to the selection rectangle. This is really annoying!</td>
+</tr>
+<tr>
+<th style="vertical-align: top; text-align: left;">A:</th>
+<td>a) Note the cursor shape change when the mouse hovers
+over<br>
+a selection rectangle. In addition, when you press the mouse to<br>
+grab the wire point, the
+selection &nbsp;box around the wire point<br>
+changes color. If you don't see a
+color change and release the<br>
+mouse before moving it, you will be fine.<br>
+<br>
+b) If you missed a), moved the mouse and see a selection<br>
+rectangle being drawn, hit ESC before releasing the mouse or reduce the
+selection rectangle to a tiny size.<br>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span style="font-weight: bold;"><a name="nographics"></a></span><span style="font-weight: bold;">Q:</span></td>
+<td>Can I 
+<a name="build_an_EPICS_database_from_a_schematic">build
+an EPICS database from a schematic without
+using the graphics</a></td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">A:</span></td>
+<td>Yes. Run from the command line with the schematic name
+added<br>
+to the -s switch:<br>
+<br><span style="font-family: monospace;">
+java -jar tdct.jar -s &lt;schematic name&gt;</span><br>
+<br>
+</td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;"><a name="hardware_link_field"></a></span><span style="font-weight: bold;">Q:</span></td>
+<td>during database building tdct shows an error message:<br>
+"&lt;record&gt; 
+<a name="cannot_determine_hardware_link_field">cannot
+determine hardware link field</a>".<br>
+<span style="text-decoration: underline;"></span></td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">A:</span></td>
+<td>On startup tdct registers a list of record types with
+hardware fields. <br>
+If
+a record type is used with a DTYP field other than Soft Channel or Raw
+Soft Channel which is not registered, this error message appears.<br>
+<br>
+Remedy:
+In the configuration directory add a file hwrecorddefs.cfg or, if this
+file exists, add lines to it for the record types which are missing.
+Each line has the format:<br>
+<br>
+<span style="font-family: monospace;">&lt;record
+type&gt; &lt;hardware field&gt;</span><br>
+Example:<br>
+<span style="font-family: monospace;">stringin INP</span></td>
+</tr>
+</tbody>
+</table>
+<span style="font-weight: bold;"></span><span style="font-family: monospace;"><br>
+</span>
+</body></html>

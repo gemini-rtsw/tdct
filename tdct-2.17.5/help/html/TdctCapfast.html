@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Tdct and Capfast</title><meta content="Rolf Keitel" name="author"></head>
+<body>
+<h2><a name="Differences_between_Tdct_and_Capfast">Differences
+between Tdct and&nbsp;Capfast</a></h2>
+This section talks about some things which make behave Tdct differently
+from Capfast and other things, which I noticed along the way,
+and essentially show my ignorance:<br>
+<br>
+<span style="font-weight: bold;">Default values for record
+properties</span><br>
+In Capfast compatibility mode, Tdct uses the EPICS library symbols <span style="font-weight: bold;">both</span> to
+establish default values for the record properties on the property
+sheet <span style="font-weight: bold;">and</span>
+for generating the
+database.<br>
+Capfast seems to use the EPICS library symbols to establish default
+values for the record
+properties on the property sheet, but e2db probably gets default values
+from edb.def.<br>
+<br>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;">Snap Grid<br>
+</span>Tdct uses a fixed snap grid of 8 units. &nbsp;Capfast<span style="font-weight: bold;">&#8482; </span>uses a
+configurable snap
+grid. Unfortunately the snap grid is saved as an application parameter,
+not with the schematic. Because of this a change of snap grid can lead
+to wires suddenly being not connected as before.<br>
+<span style="font-weight: bold;"><br>
+Symbol Rotation<br>
+</span>There is no rotation of symbols in Tdct. Rotation
+functionality was implemented for bus-taps when importing Capfast<span style="font-weight: bold;">&#8482; </span>schematics only.
+Drawing of new bus-taps uses standard orientation.<span style="font-weight: bold;"><br>
+<br>
+</span><span style="font-weight: bold;">Wire numbers</span><br>
+Wires other than buses and bus-wires are automatically numbered
+by Tdct, when a schematics is saved.<br>
+This was implemented because of issues in&nbsp;Capfast<span style="font-weight: bold;">&#8482;, </span>which led in
+certain
+circumstances to incorrect EPICS databases.<br>
+<br>
+Only buses and bus-wires can have user-assigned names.<br>
+<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;">Wire
+Connections<br>
+</span>In contrast to&nbsp;Capfast<span style="font-weight: bold;">&#8482;&nbsp; </span>tdct
+does not allow to connect more than one wire to a symbol port.<br>
+<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;">Wire
+Rerouting<br>
+</span>When re-routing a wire in<span style="font-weight: bold;"> </span>Capfast<span style="font-weight: bold;">&#8482;&nbsp; </span>wires
+would make
+additional connections to ports, if a segment ran over the port
+symbols. Tdct will only make wire-connections with wire-end-points.<br>
+<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;"><br>
+Bus Taps<br>
+</span>Bus taps in Tdct cannot be rotated. Bus wires can only
+connect
+to vertical bus segments.<span style="font-weight: bold;"><br>
+<br>
+</span> <span style="font-weight: bold;"></span><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body></html>

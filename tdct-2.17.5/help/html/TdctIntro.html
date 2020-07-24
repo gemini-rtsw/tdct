@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Introduction to Tdct</title>
+
+<meta content="R. Keitel" name="author">
+<link rel="stylesheet" href="/styles/controls/controls.css" type="text/css"></head>
+<body>
+<h2 class="noindex">Tdct - a&nbsp;Configuration Tool for EPICS Runtime
+Databases</h2>
+<a href="#Purpose">Purpose</a><br>
+<a href="#Configuring_EPICS_Runtime_Databases">Configuring
+EPICS
+Runtime Databases with tdct</a><br>
+<a href="TdctIntro.html#Hierarchy">Hierarchy</a><br>
+<a href="#Functionality_Summary">Functionality Summary</a><br>
+<a href="#Help_System">Help System</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Conventions_used_in_this_Help_System">Conventions
+used in the Help System</a><br>
+<a href="#Road_Map">Development Road Map</a><br>
+<a href="TdctRunning.html">Running Tdct</a><br>
+<a href="TdctRunning.html#Running_Tdct_with_Command_Line">Running
+Tdct
+with Command
+Line Switches</a><br>
+<a href="TdctCapfast.html">Differences between Tdct
+and Capfast</a><br>
+<br>
+NOTE: tdct requires java 1.7<br>
+<h3><a name="Purpose"></a>Purpose</h3>
+tdct was created as a replacement for the Capfast<span style="font-weight: bold;"></span><span style="font-weight: bold;">&#8482;</span>&nbsp;<a href="#phase3">[1]</a> tool, which was used by the
+ISAC controls group
+at TRIUMF from 1996-2009.<br>
+<h3><a name="Configuring_EPICS_Runtime_Databases">Configuring
+EPICS
+Runtime Databases with tdct</a></h3>
+tdct provides a graphical way for designing EPICS IOC functionality by
+instantiating EPICS records, assigning values to their properties
+(=fields)&nbsp; and defining links between the records. Records
+(including their links) are instantiated on a schematic and saved to a
+schematics file.<br>
+<h3><a name="Hierarchy">Hierarchy</a></h3>
+tdct supports the creation of schematic hierarchies by allowing symbol
+instances representing a schematic to be part of another schematic and
+pass parameters via the symbol instance. This can be used&nbsp;to
+form
+an
+"object-like"
+superstructure above the flat, process-variable oriented EPICS runtime
+databases. <br>
+<span style="font-weight: bold;"></span>
+<h3><a name="tdct_Functionality_Summary"></a>tdct
+Functionality Summary</h3>
+tdct contains the following functionality:<br>
+<ul>
+<li>a schematics viewer/editor with full hierarchy support for
+configuring EPICS runtime databases</li>
+<li>a symbol viewer/editor for designing component symbols and
+EPICS
+record symbols</li>
+<li>a database builder, which translates schematics into EPICS
+runtime database (.db)&nbsp; files, which can be loaded into an
+IOC. tdct supports building of both fully resolved databases and
+template databases (with unresolved macros which are resolved when the
+database is loaded into an IOC) .</li>
+<li>an on-line viewer, which allows the schematics viewer to
+display
+real-time data from an EPICS IOC.</li>
+<li>a rudimentary VDCT &gt;&gt; tdct converter.</li>
+</ul>
+<h3><a name="Help_System">Help System</a></h3>
+On-line help is started from menu &nbsp;<span style="font-style: italic;">Help &gt;&gt; tdct help.</span><br>
+Tdct provides two options of viewing on-line help which are configured
+with the configuration file directive [helppath]<br>
+<ul>
+<li>using the Java Help System. The [helppath] must point to
+the location
+of the help distribution, usually a sub-directory<br>
+"help" below the tdct.jar.<br>
+Recently I encountered problems
+generating the index and search functions for the Java Help system. <br>
+added the option of </li>
+<li>displaying help with a web browser. In this case [helppath]
+must point either</li>
+<ul>
+<li>to a URL on a local web-server where the html files for
+the tdct help are stored.</li>
+<li>or to the TRIUMF web-site at
+http://isacwserv.triumf.ca/epics/tdct/help. Note<br>
+that the TRIUMF web-site will always contain help for the latest tdct
+release.</li>
+</ul>
+</ul>
+The second option requires the environment variable TDCT_BROWSER to
+provide the startup command for a web browser.
+<h4><a name="Conventions_used_in_this_Help_System">Conventions
+used
+in this Help System</a></h4>
+Commands or configuration file entries are printed in <span style="font-family: monospace;">fixed width font</span>,
+e.g.<br>
+<br>
+<span style="font-family: monospace;">[option] dbdmode</span><br>
+<br>
+Menu items are printed in <span style="font-style: italic;">Italics</span>,
+i.e. <span style="font-style: italic;">File
+&gt;&gt; Open New
+Schematics </span>corresponds to <br>
+<br>
+<img style="width: 329px; height: 281px;" alt="File &gt;&gt; Open Schematic menu" src="Menu.png"><br>
+<br>
+<br>
+<br>
+<h3><a name="Road_Map">Development Road Map</a></h3>
+The following road-map for development was originally envisaged. Look
+at the present release number and draw your own conclusions.<br>
+<br>
+<span style="font-weight: bold;">Release 1</span><br>
+<ol>
+<li>Full Capfast<span style="font-weight: bold;">&#8482;</span>
+compatibility mode (within the usage scope of the
+ISAC controls group and possible collaborators. See unsupported
+features below):</li>
+<ol>
+<li>Schematic&nbsp;files should be compatible with Capfast<span style="font-weight: bold;">&#8482;</span>'s schematic editor
+(schedit).</li>
+</ol>
+<ol>
+<li>Symbol files should be compatible with Capfast<span style="font-weight: bold;">&#8482;</span>'s symbol editor
+(symed).</li>
+</ol>
+<ol>
+<li>Both Capfast<span style="font-weight: bold;">&#8482;</span>
+and
+Tdct should be usable on the same file sets.</li>
+</ol>
+<ol>
+<li>Generated EPICS databases should be verifiably identical
+to
+those generated by the schedit &gt;&gt; sch2edif
+&gt;&gt; e2db tool
+chain. This means that databases generated by the two tools from the
+same schematic file may only differ in the record sequence within the
+EPICS database and field sequence within records.</li>
+</ol>
+</ol>
+<span style="font-weight: bold;">Release 2</span><br>
+<ol>
+<li>Maintain Capfast<span style="font-weight: bold;">&#8482;</span>
+compatibility mode.</li>
+<li>Add frugal database mode ("dbd mode"):</li>
+<ol>
+<li>Include a full dbd file parser</li>
+<li>In this mode,&nbsp;do not use edb.def &nbsp;as
+template for
+database generation.<br>
+edb.def is still used for mapping of symbol files to record types.</li>
+<li>use default properties from dbd and override from symbol
+file.</li>
+<li>add only fields to database which changed from the dbd
+default.</li>
+</ol>
+<li>Add Channel Access functionality</li>
+</ol>
+<span style="font-weight: bold;">Release 3</span> -
+probably a pipe
+dream<br>
+<ol>
+<li>merge symbol and schematic files into a new format</li>
+</ol>
+<br>
+<br>
+<h3><br>
+</h3>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;">[1]
+Phase
+Three Logic, Beaverton, Ore., USA
+</body></html>

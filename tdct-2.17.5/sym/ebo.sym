@@ -1,0 +1,105 @@
+[symbol2]
+bbox -32 32 672 544
+port 0 192 -100 1024 U3 symbol 1 -32 192 0
+port 0 256 -100 1024 U2 symbol 1 -32 256 0
+port 640 96 -100 1024 U1 symbol 2 672 96 0
+port 640 160 -100 1024 U0 symbol 2 672 160 0
+port 640 288 100 1024 VAL symbol 3 672 288 0
+port 640 224 100 1024 OUT symbol 2 672 224 0
+port 640 384 100 1024 FLNK symbol 2 672 384 0
+port 0 320 100 1024 DOL symbol 1 -32 320 0
+port 0 128 100 1024 SLNK symbol 1 -32 128 0
+port 0 64 100 1024 SDIS symbol 1 -32 64 0
+uniq 7
+[tools]
+[attributes]
+p 672 224 75 768 -1 pproc(OUT):NPP
+p 704 224 75 768 -1 palrm(OUT):NMS
+p 320 238 100 0 1 COSV:NO_ALARM
+p 184 444 100 0 1 DESC:binary output record
+p 320 366 100 0 1 DISS:NO_ALARM
+p 320 206 100 0 1 DISV:1
+p 255 493 100 0 -1 DTYP:Soft Channel
+p 96 302 100 0 1 EVNT:0
+p 96 206 100 0 1 HIGH:0.000000
+p 320 174 100 0 1 IVOA:Continue normally
+p 320 142 100 0 1 IVOV:0
+p 96 238 100 0 1 OMSL:supervisory
+p 96 142 100 0 1 ONAM:disabled
+p 320 270 100 0 1 OSV:NO_ALARM
+p 96 334 100 0 1 PHAS:0
+p 96 270 100 0 1 PINI:NO
+p 320 334 100 0 1 PRIO:LOW
+p 96 366 100 0 1 SCAN:Passive
+p 96 78 100 0 1 SIML:0.000000000000000e+00
+p 80 0 100 1024 0 name:$(top)$(I)
+p 96 46 100 0 1 SIMS:NO_ALARM
+p 96 110 100 0 1 SIOL:0.000000000000000e+00
+p 297 516 100 0 -1 Type:bo
+p 96 174 100 0 1 ZNAM:enabled
+p 320 302 100 0 1 ZSV:NO_ALARM
+p 96 -292 100 0 0 def(DOL):0.000000000000000e+00
+p 96 -82 100 0 0 def(FLNK):0.000000
+p 96 -164 100 0 0 def(OUT):0.000000000000000e+00
+p 96 -228 100 0 0 def(SDIS):0.000000000000000e+00
+p -32 320 75 1280 -1 palrm(DOL):NMS
+p -32 64 75 1280 -1 palrm(SDIS):NMS
+p -64 320 75 1280 -1 pproc(DOL):NPP
+p -64 64 75 1280 -1 pproc(SDIS):NPP
+p 208 446 100 0 0 primitive:ebo
+p 96 -196 100 0 0 typ(DOL):path
+p 96 -100 100 0 0 typ(FLNK):path
+p 96 -132 100 0 0 typ(OUT):path
+p 96 -260 100 0 0 typ(SDIS):path
+p 640 160 100 1024 -1 username(U0):FLD0
+p 640 96 100 1024 -1 username(U1):FLD1
+p 0 256 100 1024 -1 username(U2):FLD2
+p 0 192 100 1024 -1 username(U3):FLD3
+p -32 192 75 1280 0 palrm(U3):NMS
+p -64 192 75 1280 0 pproc(U3):NPP
+p -32 256 75 1280 0 palrm(U2):NMS
+p -64 256 75 1280 0 pproc(U2):NPP
+p 672 96 75 768 0 palrm(U1):NMS
+p 704 96 75 768 0 pproc(U1):NPP
+p 672 160 75 768 0 palrm(U0):NMS
+p 704 160 75 768 0 pproc(U0):NPP
+[layers]
+<symbol>
+r 0 32 32 608 544
+v 0 -32 192
+32 192
+_
+v 0 -32 256
+32 256
+_
+v 0 608 96
+672 96
+_
+v 0 608 160
+672 160
+_
+v 0 608 288
+672 288
+_
+v 0 32 416
+608 416
+_
+v 0 32 480
+608 480
+_
+v 0 608 224
+672 224
+_
+v 0 608 384
+672 384
+_
+v 0 -32 320
+32 320
+_
+v 0 -32 128
+32 128
+_
+v 0 -32 64
+32 64
+_
+[comments]
