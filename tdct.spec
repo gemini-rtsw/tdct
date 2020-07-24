@@ -2,7 +2,7 @@
 %define gemopt opt
 %define version 3.15.8
 %define name tdct
-%define release 2.17.5
+%define _release 2.17.5
 %define repository gemdev
 %define debug_package %{nil}
 %define arch %(uname -m)
@@ -22,7 +22,7 @@
 Summary: tdct for editing schematics for EPICS
 Name: %{name}
 Version: %{version}
-Release: %release.%(date +"%Y%m%d")%{checkout}%{?dist}
+Release: %{_release}.%(date +"%Y%m%d")%{checkout}%{?dist}
 License: Proprietary
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
@@ -44,7 +44,7 @@ EPICS is a set of Open Source software tools, Vlibraries and applications develo
 mkdir -p %{buildroot}/%{_prefix}
 pwd
 ls
-cp -r %{name}-%{release} %{buildroot}/%{_prefix}/%{name}
+cp -r %{name}-%{_release} %{buildroot}/%{_prefix}/%{name}
 
 %post
 
