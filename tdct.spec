@@ -60,6 +60,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jul 24 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.17.5.20200724054ec6a
+- fix in specfile (fkraemer@gemini.edu)
+
 * Fri Jul 24 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.17.5.20200724bf51198
 - new package built with tito
 
