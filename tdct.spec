@@ -62,6 +62,8 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Jul 24 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.17.5.20200724aa60df6
+- another fix to specfile (fkraemer@gemini.edu)
 
 * Fri Jul 24 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.17.5.2020072491e30d8
 - another try to fix (fkraemer@gemini.edu)
