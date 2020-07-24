@@ -19,7 +19,7 @@
 %global debug_package %{nil}
 %global __os_install_post /usr/lib/rpm/brp-compress %{nil}
 
-Summary: tdct for editing schemtaics for EPICS
+Summary: tdct for editing schematics for EPICS
 Name: %{name}
 Version: %{version}
 Release: %release.%(date +"%Y%m%d")%{checkout}%{?dist}
@@ -41,7 +41,6 @@ EPICS is a set of Open Source software tools, Vlibraries and applications develo
 %build
 
 %install
-rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/%{_prefix}
 cp -r tdct-%{release} $RPM_BUILD_ROOT/%{_prefix}/%{name}
 
