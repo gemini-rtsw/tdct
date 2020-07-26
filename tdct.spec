@@ -62,6 +62,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Sun Jul 26 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.17.5.20200726dd2d1ae
+- added some missing Gemini record symbols (kraemer@asmara.leibniz-kis.de)
+
 * Fri Jul 24 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.17.5.20200724aa60df6
 - another fix to specfile (fkraemer@gemini.edu)
 
