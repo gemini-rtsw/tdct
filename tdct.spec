@@ -28,8 +28,8 @@ Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
 ExclusiveArch: %{arch}
 Prefix: %{_prefix}
-BuildRequires: epics-base-devel java-1.8.0-openjdk-headless
-Requires: epics-base-devel java-1.8.0-openjdk-headless
+BuildRequires: epics-base-devel java-1.8.0-openjdk
+Requires: epics-base-devel java-1.8.0-openjdk
 
 
 %description
