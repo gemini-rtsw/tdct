@@ -1,0 +1,1937 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Tdct Release Notes</title><meta content="Rolf Keitel" name="author"></head>
+<body>
+<h2 class="noindex">Current Release: 2.18.2</h2>
+Thanks to the tdct users who contributed suggestions and bug reports.<br>
+My apologies if I missed someone in the following list. Send me an
+e-mail and I will correct the omission.<br>
+TRIUMF: J. Larsson, R. Nussbaumer, M. Rowe, G. Waters<br>
+Keck: A. Honey, J.Johnston, K. Tsubota<br>
+Gemini: Ricardo Cardenes, M. Rippa, M. Westfall<br>
+LANL: S. Baily<h2 class="noindex">Release Notes &nbsp;(2.18.1 ... after 2020-03-23)</h2><span style="font-weight: bold;">Changes since 2.17</span><br>- 2.18.2 simplify JSON handling, allow info nodes in EPICS record symbols<br>- 2.18.1 provide JSON assist dialog for JSON link types<br>- 2.18.1 add JSON syntax check for JSON link types and JSON info nodes.<br>- 2.18.1 add zoom undo with CTRL-0<br><span style="font-weight: bold;">Bugs fixed</span><br>- 2.18.2 capfast_proc option had wrong default false<br>- 2.18.1&nbsp;Dbd parser refused unknown JSON link type <br><br>
+<h2 class="noindex">Release Notes &nbsp;(2.17.1 ... after 2017-12-15)</h2>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;">Changes since 2.16</span><br>- 2.17.16 improve java version check, no check if -ignoreversion is used &nbsp;as first command line parameter<br>- 2.17.15 new option capfast_proc (defaults to false)<br>- 2.17.14 user-supplied value for unresolved macros in [dbpath] and [startup]<br>- 2.17.13 if immediate schematic contains a path, use it as current directory<br>- 2.17.12 links to hwio retain PP MS properties if &nbsp;hwio does not contain a hardware address<br>- 2.17.11 fix link filelds / ppms code to allow link fields to contain white space<br>- 2.17.10 add option batch_warnings (default true) to suppress schematic load warnings<br>- 2.17.10 Improve handling of config file errors, warn on multiple options directives<br>- 2.17.10 add "Open selected symbol" function to file menu<br>- 2.17.9 add "Open partner drawing" function to file menu<br>- 2.17.8 relaxe definition of TRIUMF frame<br>-&nbsp;2.17.7 replace Scanner with BufferedReader when reading schematics due to weird problems on Linux<br>- 2.17.6 fix issues with identical hierarchy connectors.<br>- 2.17.6 fix issues when connecting wires to wires.<br>- 2.17.5 Support the ppms attributes MSI and MSS<br>- 2.17.4 remove the Java help system. Only web-based help.<br>- 2.17.4 fix dbd file decoding so that white space after device is ignored like in iocCore (thanks to S. Baily, LANL)<br>- 2.17.3 allow [epicslib],[defaultlib], and [userpath] to point to the same directory<br>- 2.17.3 disallow connecting of plain wires to bus ports and of buses to non-bus ports<br>- 2.17.2 recognize [include] directive in edb.def.
+[edbdef] directive may specify file name other than edb.def<br>
+- 2.17.1 add support for &nbsp;EPICS 3.16.1 features:
+&nbsp;DBF_INT64, JSON on links and info nodes.<br>
+-&nbsp;2.17.1 add Channel Access test dialog<br>
+- 2.17.1 in on-line mode do proper type-specific DBRs<br>
+<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;">Bugs fixed</span><br>- 2.17.14 nullpointer bug calling tdct help if no TDCT_BROWSER defined<br>- 2.17.12 links to hwio did not retain&nbsp;PP MS if the hwio contained a PV name<br>- 2.17.10 display schematic load warnings when batch-building databases.<br>- 2.17.5 if symbol not found when parsing a schematics error message was no longer generated<br>- 2.17.2 macro substitution could not handle $$(macro)...<br>- 2.17.1 rework and debug some on-line features.<span style="font-weight: bold;"><br>
+</span>
+<h2 class="noindex">Release Notes &nbsp;(2.16.1 ...
+after 2017-01-22)</h2>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;">Changes since 2.15<br>
+</span>- 2.16.22 allow adding of "name" instance property to
+EPICS records<br>
+- 2.16.21 allow removal of instance properties, add "test: error none
+to support for regression testing<br>
+- 2.16.20 allow color spec in config file as 255,255,255 or
+(255,255,255) in addition to 0xFFFFFF<br>
+- 2.16.20 allow resetting of record or symbol instance properties to
+the default value<br>
+- 2.16.19 allow removal of aliases and record information nodes<span style="font-weight: bold;"><br>
+</span>-
+2.16.17 add -o command line switch for specifying database name on the
+command line (batch mode only)<br>
+-
+2.16.16 CTRL-SHIFT mouse-wheel zooms in/out around present mouse
+position.<br>
+-
+2.16.14 if schematics installs new config file, allow restoration of
+previous config file via Options &gt;&gt; Restore original
+config file<br>
+- 2.16.6 add option 'warn_on_incomplete_wires<br>
+- 2.16.6 improve database building if wires have free ends or
+hierarchical connectors have no wire attached<br>
+- 2.16.5&nbsp;detect bus-mixups and allow automatic renaming of
+mixed-up bus segments<br>
+- 2.16.4 support default macro values according to EPICS Application
+Developers Guide<br>
+- 2.16.3 Rewrite macro-resolution algorithm<br>
+<span style="font-weight: bold;"></span>- 2.16.2
+Schematic editor allows flipping of bus-taps<br>
+- 2.16.1 Bus-wire algorithm upgraded to handle both old-style and
+new-style without assumptions <br>
+<br>
+<span style="font-weight: bold;">Bugs fixed</span><br>
+- 2.16.22 fix nullpointer bug when adding properties to an EPICS record<br>
+- 2.16.20 remove alias and information node buttons from property
+dialog if no EPICS record<br>
+- 2.16.19 fix more problems with ${..} macros<br>
+- 2.16.19 fix bugs with record information nodes <br>
+- 2.16.17 fix error in wire-nets with multiple user-defined ports<br>
+- 2.16.16 allow macro format ${..} in property dialog <br>
+- 2.16.16 wire connected to user-defined port was not recognized<br>
+- 2.16.15 fix macro substitution attempt on symbol properties with $
+but not $(...)<br>
+- 2.16.13 one more macro fix for Gemini (recursive substitution)<br>
+- 2.16.12 fix $(I) resolution on hwin and hwout for Gemini<br>
+- 2.16.11 fix more macro issues raised by Gemini<br>
+- 2.16.10 unresolved macro messed up other macros in record name<br>
+- 2.16.10 fix more macro issues<br>
+- 2.16.9 fix issues with recursive macro definitions<br>
+- 2.16.8 fix symbol find by name <br>
+- 2.16.7 fix PP/MS setting from hwin and hwout<br>
+- 2.16.2 Bus-wire entering a symbol was lost.<br>
+<h2 class="noindex">Release Notes &nbsp;(2.15.1 ...
+after 2016-10-19)</h2>
+<span style="font-weight: bold;">Changes since 2.14</span><br>
+- 2.15.7 add current PV to exception reporting <br>
+- 2.15.6 follow bus-wires for&nbsp;bus-taps connected to bus
+segments and old-style without bus-segments.<br>
+- 2.15.6 add option empty_unresolved_macros for compatibility with
+gemini capfast.<br>
+<span style="font-weight: bold;"></span>-
+2.15.5 update single property sheet when selection is changed. Rework
+wire-follower. Add CVS tags to comments section.(option add_cvs_tags)<br>
+- 2.15.4 add API for adding test specs to schematic comment section.
+Add TestSpecChecker class.<br>
+- 2.15.4 retain comment section of schematic<br>
+- 2.15.2 added command line switches -h and -?<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;">- </span>2.15.1
+buses and bus-wire implementation was reworked<br>
+<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;">Bugs fixed<br>
+</span>- 2.15.9 more bus-following issues.<br>
+- 2.15.8 fix problems when following buses through the hierarchy<br>
+- 2.15.6 many fixes for Keck compatibility<br>
+- 2.15.5 buses with both ends free were not saved<br>
+- 2.15.5 write backup files only on save<br>
+<span style="font-weight: bold;">- </span>2.15.4
+don't allow port names with white space.<br>
+<h2 class="noindex">Release Notes &nbsp;(2.14.1 ...
+after 2014-08-22)</h2>
+<span style="font-weight: bold;">Changes since 2.13<br>
+</span>-
+2.14.1 Support added for dropping instance properties for user symbols,
+if the symbol
+does not contain the property (symbol modified after schematic has been
+drawn)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; Options added: add_instance_property,
+add_instance_property_warn<br>
+- 2.14.2 Add to help menu: print example configuration file in linux or
+windows format<br>
+-
+2.14.3 Change option functionality_notebox to "none" | "noauto" |
+"always" &nbsp;- maintain backward compatiblity with true/false<span style="font-weight: bold;"><br>
+</span>-
+2.14.4 open schematic and open symbol allow now selection of more than
+one file<br>
+-
+2.14.4 new option immediate_macro_use (see help on building EPICS
+databases)<br>
+- 2.14.7 new [win2linux] directive which allows use of same
+configuration file for windows and linux users<br>
+- 2.14.8 new [epicslib_compat] directive for conversion from Capfast
+compatiblity mode to dbd mode<br>
+- 2.14.9 add -tup command line switch to add temporary user paths<br>
+- 2.14.10 fixed issues around --- PP MS in dbd mode<br>
+- 2.14.14 improve wire cleanup when reading schematic - remove
+misleading messages.<br>
+- 2.14.15 treat comment box like a frame for selection<br>
+- 2.14.16 use macro value "" to create empty macro value, i.e. don't
+put $(macro) into the database<br>
+-
+2.14.17 don't check value of promptgroup property of EPICS records any
+more, just check for non-empty (to comply with Ralph Lange's changes to
+the values).<br>
+-
+2.14.18 all symbols starting with hwin, e.g. hwinl, hwinxxx are
+recognized as "hardware input". Similar hwout, inhier, outhier.<br>
+- 2.14.19 fix hierarchy issues with buses (Thanks to Al Honey, Keck,
+for reporting)<br>
+- 2.14.20 allow bus name-change at a hierarchical connector<br>
+<span style="font-weight: bold;"></span>- 2.14.21
+improve macro resolution on PP and MS properties<br>
+- 2.14.22 recognize generic Capfast bus names (n#\d\d\d[\d-\d]<br>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"></span>- 2.14.22 decode
+wire properties<br>
+- 2.14.22 allow buses to consist of several wires with same bus ID.<br>
+- 2.14.23 allow bus wires to connect to a horizontal bus segment.<br>
+- 2.14.23 warn if bus width does not match hierarchical connector width<br>
+- 2.14.23 bus name and bus wire-name must agree<br>
+- 2.14.23 bus wire number must be within bus width.<br>
+- 2.14.23 allow renaming of buses and bus wires<br>
+<br>
+<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;">Bugs fixed<br>
+</span>- 2.14.1&nbsp;Open recent schematic would not check if
+schematic is already open.<br>
+-
+2.14.2 Fix issue of main propertysheet popping behind main window if
+mouse moved out of &nbsp;property sheet (if window manager is setup
+to
+shift focus on mouse move)<br>
+- 2.14.3 If a schematic/symbol was 'saved as' the original file could
+not be reloaded.<br>
+<span style="font-weight: bold;"></span>- 2.14.12
+null pointer exception when writing default configuration file.<br>
+- 2.14.20 Tdct did not allow that a bus changed name when passing
+through a hierarchical connector.<br>
+- 2.14.22 Fix missing recognition of bus name changes<br>
+- 2.14.22 Fix "unconnected" circles at bus-tap connections to bus.<br>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;"><br>
+</span><br>
+<span style="font-weight: bold;"></span><br>
+NOTE:
+&nbsp;from release 2.13.1 on, the changes and the bug-fixes will be
+labelled with the release, which has the new feature / bug-fix.<br>
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex">Release Notes &nbsp;(2.13.1 ...
+after 2013-10-14)</h2>
+<span style="font-weight: bold;">Changes since 2.12<br>
+</span>- 2.13.1 Support added for&nbsp;EPICS
+records&nbsp; information items ("info nodes") <br>
+&nbsp; &nbsp;(See
+help for Schematic Editor and EPICS Application Developers Guide,
+Chapter "Database Definition", Sections "Record Instance" and "Record
+Information Item")<br>
+- 2.13.1 Support added for EPICS record aliases<br>
+- 2.13.3 fixed issues in online mode<span style="font-weight: bold;"><br>
+</span>- 2.13.4 Add connect call-back functions for new EpicsPvLib<br>
+- 2.13.4 improve error messages when loading bad symbols<br>
+- 2.13.6 add option functionality_notebox<br>
+- 2.13.10 reload symbol menu command<br>
+- 2.13.10 symbol editor: allow font size change for labels.<br>
+- 2.13.11 fix lock-up if hierarchical connectors have the same name<br>
+- 2.13.16 improve&nbsp; algorithm for fixing schematic when a user
+symbol has changed <br>
+- 2.13.17 add command line parameter -st to allow batch building of
+templates<br>
+- 2.13.17 change macro substitution: if macro value does not exist,
+keep macro definition in string.<br>
+- 2.13.20 improve error and warning messages on macro substitution<br>
+- 2.13.21 fix typo and improve message on symbol reload<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.13.2 resolving a link through a bus took the first
+matching wire, irrespective of the link<br>
+2.13.3 unreported null pointer exception during database build<br>
+2.13.6 fixed menu and canvas issues when first drawing load was
+unsuccessful<br>
+2.13.10 reloading of symbols did not update the references on symbol
+instances.<br>
+2.13.16 add several&nbsp;null-pointer checks.<br>
+2.13.18&nbsp;logic bug in message for missing macro<br>
+2.13.19 -st switch was not recognized<br>
+2.13.20 cut/paste or copy/paste with name dropped id on hierarchical
+connector<br>
+<span style="font-weight: bold;"></span><br>
+NOTE:
+&nbsp;from release 2.13.1 on, the changes and the bug-fixes will be
+labelled with the release, which has the new feature / bug-fix.<br>
+<h2 class="noindex">Release Notes &nbsp;(2.12.0 ...
+after 2013-06-26)</h2>
+<span style="font-weight: bold;">Changes since 2.11<br>
+- <span style="font-style: italic;">IMPORTANT: </span></span>from
+release 2.11.2 on, the decoding of command line switches was changed to
+reflect general usage:<br>
+--- the switch &nbsp;and the switch value must now be separated by
+white space<br>
+- check and report bad links during database build (note that wires
+connecting two non-link fields are not reported).<br>
+- no matter what options are selected, macros in a link field won't get
+.NPP.NMS appended<br>
+- added ability to set/modify PP and MS by double-clicking on
+wire-segments next to ports.<br>
+<br>
+<br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.12.4-1 decoding of EPICS records symbols had a bug in
+string property handling. Only record effected was timeStamp.<br>
+2.12.6-1 in symbol editor, double-click while vector was drawn would
+bring up dialog and corrupt vector.<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.5.0-2 leaving on-line mode and going back to on-line
+afterwards sometimes does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.11.0...
+after 2012-01-01)</h2>
+<span style="font-weight: bold;">Changes since 2.10<br>
+- </span>IMPORTANT: from release 2.11.2 on, the decoding of
+command line switches was changed to reflect general usage:<br>
+--- the switch &nbsp;and the switch value must now be separated by
+white space<br>
+- selection rectangle was colour coded (color_zoom and color_select)<br>
+- command line switch -z &nbsp;for configuring the zoom button
+(button 1 or 2)<br>
+<span style="font-weight: bold;">-</span>
+modify property dialog column names to distinguish "Name / Value" for
+epics record properties from "Id / Name Value" for symbol macros<br>
+- allow multiple paths in a [userpath] and [dbdpath] directive<br>
+- add option "display_changed_properties" (see help for Schematic
+Editor)<br>
+- check for unconnected wires if a recordtype is changed<br>
+- make property dialog invisible while a property is dragged<br>
+- improve checking of &nbsp;EPICS record added properties to allow
+pproc(...) and palrm(...)<br>
+- barf if a hierarchical connector has no name (ie. is still called
+inhier#... or outhier#...)<br>
+<br>
+<br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.11.0-1 in symbol editor after a vector draw,
+newSymbolDrawer was not reset<br>
+2.11.8-1 default EPICS ports for TRIUMF gateway were set wrong<br>
+2.11.9-1&nbsp;null-pointer problem in symbol editor when a symbol
+macro exists with name only, but no value<br>
+2.11.11-1 frames did not save the entered author name<br>
+2.11.14-1 when config file was changed, config file name was reset to
+tdct.cfg after loading. This caused wrong recent files.<br>
+2.11.15-1&nbsp;when saving a user symbol (symbol editor) fix
+bounding box so that grid alignment is maintained.<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.5.0-2 leaving on-line mode and going back to on-line
+afterwards sometimes does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.10.0...
+after 2011-11-29)</h2>
+<span style="font-weight: bold;">
+Changes since 2.9<br>
+-</span> add NoteBox and CommentFrame classes for Capfast
+comptibility<br>
+- in symbol editor, symbol properties (macros) can now be assigned
+display modes (All, Nothing, Value Only)<br>
+- in symbol editor, symbol properties (macros) can now be assigned font
+size<br>
+- in symbol editor, added a property sheet for viewing and modifying
+user symbol properties.<br>
+-
+during schematic load, get rid of bundles and join up bundle-wires with
+same name, in order
+to be able to load Capfast schematics containing bundles.<br>
+- added option "cvsframe"<br>
+- add a menu option for scaling of selected items in symbol editor<br>
+- add a second print dialog for printer selection<br>
+<br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.9.5-1 bounding box for macro strings on symbols is too
+small<br>
+2.10.18-1 changing from symbol to schematic drawing did not reset
+force90<br>
+2.10.20-1 null-pointer in symbol editor when adding a property<br>
+2.10.23-1 help directory from config file was not taken<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.5.0-2 leaving on-line mode and going back to on-line
+afterwards sometimes does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.9.0.. after
+2011-05-08)</h2>
+<span style="font-weight: bold;">
+Changes since 2.8<br>
+-</span> add "change record type" functionality via edit menu.<br>
+- add "descend hierarchy" menu item (shortcut key D)<br>
+- in dbd mode add ability to create "instance ports" on an EPICS record<br>
+- fixed a problem in macro expansion and improve error checking /
+reporting on undefined macros<br>
+- add explicit building of database templates.<br>
+- fixed a problem when [option] duplicateConnectorsOk was selected<br>
+- improved error messages when reading a schematic. <br>
+<br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.8.0-1 macros with empty values were not expanded properly<br>
+2.8.0-2 copy, cut / paste of symbols did not always maintain alignment
+wrt grid<br>
+2.8.0-3 inconsistencies, when connecting/disconnecting/reconnecting a
+hardware I/O to a symbol port and vice versa<br>
+2.8.0-4 coordinate scaling routines had a problem with schematics with
+large negative x-values<br>
+2.8.0-5 if pproc and palrm was set in a symbol file for a link, it was
+ignored during database build.<br>
+2.8.0-6 multiple definitions of the same property in a symbol was not
+handled properly. Only the 1st definition is retained.<br>
+2.9.0-1
+moving a wire so that a wire-end is located close&nbsp; to a symbol
+port caused bad wire segments when connecting to the port<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.9.5-1 bounding box for macro strings on symbols is too
+small<br>
+2.5.0-2 leaving on-line mode and going back to on-line
+afterwards sometimes does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.8.0..
+2011-02-23)</h2>
+<span style="font-weight: bold;">
+Changes since 2.7<br>
+-</span> enforce minimum port distance in symbol editor<br>
+- add simple-minded auto-router for new wires<br>
+- tie all dialogs to the main window<br>
+- copy, cut, paste also for the symbol editor<br>
+- cut and paste undo<br>
+- while dragging, snap to grid is applied<br>
+- new wire drawing now works with click-move and press-drag work flow
+at the same time.<br>
+- File menu reorganized<br>
+- Options menu reorganized. Several menu items moved to "Modify
+Configuration" sub-menu<br>
+- many small inconsistency fixes and internal clean-up<br>
+<br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.8.0-1 macros with empty values were not expanded properly<br>
+2.8.0-2 copy, cut / paste of symbols did not always maintain alignment
+wrt grid<br>
+2.8.0-3 inconsistencies, when connecting/disconnecting/reconnecting a
+hardware I/O to a symbol port and vice versa<br>
+2.8.0-4 coordinate scaling routines had a problem with schematics with
+large negative x-values<br>
+2.8.0-5 if pproc and palrm was set in a symbol file for a link, it was
+ignored during database build.<br>
+2.8.0-6 multiple definitions of the same property in a symbol was not
+handled properly. Only the 1st definition is retained.<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.5.0-2 leaving on-line mode and going back to on-line
+afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.7.0.. after
+2011-01-31)</h2>
+<span style="font-weight: bold;">
+Changes since 2.6.8<br>
+- </span>Printing is now working with proper dialogs<br>
+- The "temporary user path" feature is now fully implemented.<br>
+- tdct accepts configuration files with both windows or
+&nbsp;unix-style path definitions.<br>
+- changed paste default behaviour - after cut maintain symbol names,
+after copy drop them<br>
+- add [option] copy_paste_with_name directive, which overrides default
+behaviour<br>
+- add [option] cut_paste_with_name directive, which overrides default
+behaviour<br>
+<br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.7.0-1 assigning a macro on an enumerated property was
+broken.
+Macro was shown in JTable, but not picked up on apply.<br>
+2.7.0-2 in dbd mode, def() properties were not put to the database
+correctly<br>
+2.7.0-3 fixed misleading error message if a symbol contains an invalid
+default value for a menu-field<br>
+0.99.27-2 printing viewport is incorrect<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.5.0-2 leaving on-line mode and going back to on-line
+afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.6.8)</h2>
+<br>
+<span style="font-weight: bold;">
+Changes since 2.6.5 &nbsp;(2.6.6 and 2.6.7 are internal releases)<br>
+- </span>Default printing is B&amp;W<br>
+-&nbsp;add
+[printcolor] directive.<br>
+- Symbol editor:<br>
+-- ports can now be renamed<br>
+-- hand cursor is used to indicate when port, label, property or
+grab-square is selectable<br>
+- on schematic load:<br>
+-- port rename/move/delete of a symbol is recognized. Auto-fix option
+implemented which asks user for verification<br>
+- can now view schematic or symbol source both from file or from
+current memory <br>
+<br>
+<br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>
+2.6.6-1 moving a symbol which has a wire connected and a junction on
+that wire,
+leaves a junction in mid-air. <br>
+2.6.5-1 wire point drag: several bugs around junction moves and
+limits<br>
+2.6.5-2 problems with port selecting in symbol editor<br>
+2.5.1-2 schematic does not recognize when the symbol editor
+moves a port to which a wire is connected<br>
+2.5.1-3 tdct should offer auto-fix 2.5.1-2 and when symbol editor
+renames a port<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.5.0-2 leaving on-line mode and going back to on-line
+afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<br>
+0.99.27-2 printing viewport is incorrect<br>
+<br>
+<h2 class="noindex">Release Notes &nbsp;(2.6.5)</h2>
+<br>
+<span style="font-weight: bold;">
+Changes since 2.6.4<br>
+</span>- if a symbol is not found, allow browsing and add path
+temporarily to user path. Temporary paths are stored with recent file<br>
+<br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.6.4-1 null pointer bug in Macros<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.5.1-2 schematic does not recognize when the symbol
+editor
+moves a port to which a wire is connected<br>
+2.5.1-3 tdct should offer auto-fix 2.5.1-2 and when symbol editor
+renames a port<br>
+2.5.0-2 leaving on-line mode and going back to on-line afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.6.4)</h2>
+<br>
+<span style="font-weight: bold;">
+Changes since 2.6.3<br>
+</span>- More refactoring: move more code from Wire class to
+WirePointDragger class.<br>
+<br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.6.3-1 record properties got corrupted when property
+sheet is
+resorted<br>
+2.6.3-2 null pointer bug in LibSymbol<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.5.1-2 schematic does not recognize when the symbol
+editor
+moves a port to which a wire is connected<br>
+2.5.1-3 tdct should offer auto-fix 2.5.1-2 and when symbol editor
+renames a port<br>
+2.5.0-2 leaving on-line mode and going back to on-line afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.6.3)</h2>
+<br>
+<span style="font-weight: bold;">
+Changes since 2.6.2<br>
+</span>- Introduce SchematicAnalyzer and WireFollower to reduce
+size of
+SymbolInstance and Schematic<br>
+- If in wire-edit mode, the cursor changes to "hand" when the mouse is
+over a wire point.<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+<br>
+</span><span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>2.5.1-2 schematic does not recognize when the symbol
+editor
+moves a port to which a wire is connected<br>
+2.5.1-3 tdct should offer auto-fix 2.5.1-2 and when symbol editor
+renames a port<br>
+2.5.0-2 leaving on-line mode and going back to on-line afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.6.2)</h2>
+<br>
+<span style="font-weight: bold;">
+Changes since 2.6.1<br>
+</span>Implement symbol rotation, primarily to deal with legacy
+bus-wires.<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed</span><br>
+<br>
+<span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>2.5.1-2 schematic does not recognize when the symbol
+editor
+moves a port to which a wire is connected<br>
+2.5.1-3 tdct should offer auto-fix 2.5.1-2 and when symbol editor
+renames a port<br>
+2.5.0-2 leaving on-line mode and going back to on-line afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work
+<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.6.1)</h2>
+<br>
+<span style="font-weight: bold;">
+Changes since 2.6.0<br>
+</span>Bus support - iteration 2: &nbsp;handle disconnect and
+reconnect
+of bus wires.<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.6.1-1 symbol id's are not checked for uniqueness<br>
+<br>
+<span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>2.5.1-2 schematic does not recognize when the symbol
+editor
+moves a port to which a wire is connected<br>
+2.5.1-3 tdct should offer auto-fix 2.5.1-2 and when symbol editor
+renames a port<br>
+2.5.0-2 leaving on-line mode and going back to on-line afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex">Release Notes &nbsp;(2.6.0)</h2>
+<br>
+<span style="font-weight: bold;">
+Changes since 2.51<br>
+</span>Fixed handling of the PV property to be compatible with
+the Keck
+EPICS symbols<span style="font-weight: bold;"><br>
+</span><span style="text-decoration: underline;"></span>Added
+support
+for buses - iteration 1.<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>several null-pointer problems fixed.<br>
+2.6.0-1 when dropping a user symbol onto a schematic, the display mode
+was not recognized on library symbol properties<br>
+<br>
+<br>
+<span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>2.5.1-2 schematic does not recognize when the symbol
+editor
+moves a port to which a wire is connected<br>
+2.5.1-3 tdct should offer auto-fix 2.5.1-2 and when symbol editor
+renames a port<br>
+2.5.0-2 leaving on-line mode and going back to on-line afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.5.1)</h2>
+<br>
+<span style="font-weight: bold;">
+Changes since 2.5.0..<br>
+</span><span style="text-decoration: underline;"></span>The
+tabbed pane
+was reorganized to use tab 1 propertly<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.5.1-1 paste puts wires in wrong position<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.5.1-2 schematic does not recognize when the symbol
+editor
+moves a port to which a wire is connected<br>
+2.5.1-3 tdct should offer auto-fix 2.5.1-2 and when symbol editor
+renames a port<br>
+2.5.0-2 leaving on-line mode and going back to on-line afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex">Release Notes &nbsp;(2.5.0)</h2>
+these release notes contain information about all minor 2.5.0x releases<br>
+<span style="font-weight: bold;">
+Changes since 2.4.5<br>
+</span><span style="text-decoration: underline;">Feature
+Enhancements</span><br>
+- the symbol editor was upgraded to<br>
+--- allow moving of &nbsp;drawing
+objects<br>
+--- allow resizing of rectangles, circles and arcs<br>
+--- allow moving of vector points<br>
+--- allow placing ports and labels by clicking<br>
+- a new undo facility was implemented, which allows unlimited undo of
+delete, move and add operations for schematics and symbols<br>
+- moving of a symbol in a schematic connects now free ports to free
+wire ends.<br>
+- one can now also use arrow keys to scroll the canvas<br>
+- dragging a new wire instead of click-moving, creates error message
+(can be configured)<br>
+- rationalize the setup of the EPICS environment<br>
+- implement [include] directive for configuration file<br>
+- allow interactive change of some configuration parameters<br>
+<span style="font-weight: bold;"><br>
+</span><span style="text-decoration: underline;">Internal
+changes:</span><br>
+This is part 1 of &nbsp;a major refactoring program:<br>
+- Canvas.java was separated into TdctCanvas.java (which now contains
+only
+the elements<br>
+&nbsp; &nbsp;created by the visual form editor) and
+CanvasLogic.java
+(which contains all the logic, which backs the UI)<br>
+- a large amount of code was&nbsp;moved from CanvasLogic.java into
+helper classes<br>
+- CanvasLogic and the helper classes were refactored into a canvas
+packate<br>
+- TdctView.java was separated into TdctView.java (which now contains
+only
+the elements<br>
+&nbsp; &nbsp;created by the visual form editor) and
+ViewLogic.java
+(which contains all the logic, which backs the UI)<br>
+- TdctView and TdctCanvas were refactored into an ui package.<br>
+- all other dialogs were refactored into the ui package<br>
+- all configuration was moved from TdctApp to new TdctConfig class<br>
+<br>
+<span style="font-weight: bold;"></span><span style="text-decoration: underline;"></span><span style="font-weight: bold;">Bugs fixed<br>
+</span>2.5.0-1 grid does not display properly<br>
+<br>
+<span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>2.5.0-1 grid does not display properly<br>
+2.5.0-2 leaving on-line mode and going back to on-line afterwards does
+not work.<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex">Release Notes &nbsp;(2.4.5)</h2>
+<span style="font-weight: bold;">
+Changes since 2.4.4<br>
+</span>none<br>
+<br>
+<span style="font-weight: bold;">Bugs fixed</span><br>
+<span style="font-weight: bold;"></span>2.4.4.1 in
+symbol editor, if a
+new port is added, it cannot completely deleted (leaves horizontal
+vector)<br>
+<br>
+<br>
+<span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.4.4)</h2>
+<span style="font-weight: bold;">
+Changes since 2.4.3<br>
+</span>- added [option]&nbsp;property_dialog_with_parent,
+which
+controls the parent of &nbsp;property dialogs<br>
+<br>
+<span style="font-weight: bold;">Bugs fixed</span><br>
+<span style="font-weight: bold;"></span>none<br>
+<br>
+<span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>2.4.4.1 in symbol editor, if a new port is added, it
+cannot
+completely deleted (leaves horizontal vector)<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex">Release Notes &nbsp;(2.4.3)</h2>
+<span style="font-weight: bold;">
+Changes since 2.4.2<br>
+</span>- added [option] single_property_dialog, which makes
+property
+dialogs modal.<br>
+- added more null checking in RecordPropertyDialog<br>
+<br>
+<span style="font-weight: bold;">Bugs fixed</span><br>
+<span style="font-weight: bold;"></span>none<br>
+<br>
+<span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work0.99.27-2 printing viewport is incorrect
+<h2 class="noindex">Release Notes &nbsp;(2.4.2)</h2>
+<span style="font-weight: bold;">
+Changes since 2.4.1<br>
+</span>- as part of 2.4.1-1 bug fix, simplified and cleaned up
+the
+bounding box and symbol generation from schematic code.<br>
+- allow addition of new properties to Symbol Instances (to be
+consistent with Capfast)<br>
+<br>
+<span style="font-weight: bold;">Bugs fixed</span><br>
+<span style="font-weight: bold;"></span>2.4.1-1
+bounding box is not
+calculated correctly when a symbol is edited<br>
+<br>
+<br>
+<span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<span style="font-weight: bold;"></span>
+<h2 class="noindex">Release Notes &nbsp;(2.4.1)</h2>
+<span style="font-weight: bold;">
+Changes since 2.3.11<br>
+</span>- introduce Macros class for all macro handling<br>
+<br>
+<span style="font-weight: bold;">Bugs fixed</span><br>
+<span style="font-weight: bold;"></span>2.3.11-1
+properties added to
+EPICS record instances should not be written to the database if they
+are not defined in edb.def.<br>
+<br>
+<span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>2.4.1-1 bounding box is not calculated correctly when a
+symbol
+is edited<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<span style="font-weight: bold;"></span>
+<h2 class="noindex">Release Notes &nbsp;(2.3.11)</h2>
+<span style="font-weight: bold;">
+Changes since 2.3.10<br>
+</span>- add option ignore_connector_direction<br>
+- add option warn_on_connector_direction<br>
+- add option &nbsp;warn_on_unassigned_id<br>
+<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+<span style="font-weight: bold;"></span>2.3.03-4
+On-line name
+resolution not properly&nbsp; implemented for Gemini symbols, if
+option
+overridename is true (needs further testing)<br>
+<br>
+<span style="font-weight: bold;">
+Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex">Release Notes &nbsp;(2.3.10)</h2>
+<span style="font-weight: bold;">
+Changes since 2.3.09<br>
+</span>- add option pproc_wireonly<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+2.3.10-1 On-line mode tries to connect to DBF_NOACCESS fields<br>
+2.3.09-2&nbsp;if option overridename is true for non-gemini
+symbols,
+PVs are not properly registered. <br>
+<br>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"><br>
+Known bugs and issues <br>
+</span>2.3.03-4 On-line name resolution not properly&nbsp;
+implemented
+for Gemini symbols, if option overridename is true<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.3.09)</h2>
+<span style="font-weight: bold;">
+Changes since 2.3.08<br>
+</span>- none<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+2.3.09-1 null pointer exception if hw I/O pasted and value changed<br>
+2.3.09-2 deleting hw I/O symbol did not fully remove wire<span style="font-weight: bold;"><br>
+</span>2.3.09-3 moving hw I/O symbol did not reconnect wire in
+all cases<br>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"><br>
+Known bugs and issues <br>
+</span><br>
+2.3.03-4 On-line name resolution not properly&nbsp; implemented if
+option overridename is true<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex">Release Notes &nbsp;(2.3.08)</h2>
+<span style="font-weight: bold;">
+Changes since 2.3.07<br>
+</span>- create symbol from schematic aligns the ports in the
+same
+vertical arrangement as in the schematic<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+2.3.07-1 save dialog did not descend into directory, if directory was
+selected and return key pressed<br>
+2.3.07-2 save of symbol created from schematic caused null pointer
+exception<br>
+<span style="font-weight: bold;"><br>
+Known bugs and issues <br>
+</span><br>
+2.3.03-4 On-line name resolution not properly&nbsp; implemented if
+option overridename is true<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.3.07)</h2>
+<span style="font-weight: bold;">
+Changes since 2.3.06<br>
+</span>- use pproc and palrm properties only for wire-links, not
+if
+link is specified by def property.<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+<span style="font-weight: bold;"><br>
+Known bugs and issues <br>
+</span><br>
+2.3.03-4 On-line name resolution not properly&nbsp; implemented if
+option overridename is true<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.3.06)</h2>
+<span style="font-weight: bold;">
+Changes since 2.3.05<br>
+</span>- changed proximity square, which determines if a wire
+connects
+to a port, to a horizontal rectangle 2x as wide as high<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+<span style="font-weight: bold;"><br>
+Known bugs and issues <br>
+</span><br>
+2.3.03-4 On-line name resolution not properly&nbsp; implemented if
+option overridename is true<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex">Release Notes &nbsp;(2.3.05)</h2>
+<span style="font-weight: bold;">
+Changes since 2.3.04<br>
+</span>- added checking on schematic loads for consistency of
+wires, in
+case schematics were corrupted by bug 2.3.01-1.<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+2.3.04-1&nbsp;renaming a symbol does not properly rename wire ends
+in
+the wire list, which leads to horribly corrupted databases<br>
+<span style="font-weight: bold;"><br>
+Known bugs and issues <br>
+</span><br>
+2.3.03-4 On-line name resolution not properly&nbsp; implemented if
+option overridename is true<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.3.04)</h2>
+<span style="font-weight: bold;">
+Changes since 2.3.03<br>
+</span>- start reorganizing error handling - throw more exceptions<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+2.3.03-1 Display nothing is not recognized<br>
+2.3.03-2 tdct-generated schematic does not build with Capfast - assign
+net numbers before save<br>
+2.3.03-3 draw new schematic: typing a non-existing symbol name leads to
+null pointer exception<br>
+<span style="font-weight: bold;"><br>
+Known bugs and issues <br>
+</span><br>
+2.3.04-01 renaming a symbol does not properly rename wire ends in the
+wire list, which leads to horribly corrupted databases<br>
+2.3.03-4 On-line name resolution not properly&nbsp; implemented if
+option overridename is true<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.3.03)</h2>
+<span style="font-weight: bold;">
+Changes since 2.3.00<br>
+</span>- full on-line mode<br>
+-- channel access implementation with monitor call-backs<br>
+-- on-line property sheets "like dbpr"<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+2.3.00-1 When symbol areas overlap, multiple symbols selected on
+single-click<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues </span><br>
+2.3.03-1 Display nothing is not recognized (reported by Gemini)<br>
+2.3.03-2 tdct-generated schematic does not build with Capfast (reported
+by Gemini)<br>
+2.3.03-3 draw new schematic: typing a non-existing symbol name leads to
+null pointer exception<br>
+2.3.03-4 On-line name resolution not properly&nbsp; implemented if
+option overridename is true<br>
+<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.3.00)</h2>
+<span style="font-weight: bold;">
+Changes since 2.1.00<br>
+</span>- full on-line mode<br>
+-- channel access implementation with monitor call-backs<br>
+-- on-line property sheets "like dbpr"<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+2.1.01-1 Adding comment text drops the last character - not a bug. Must
+hit return.<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues </span><br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.2.00)</h2>
+<span style="font-weight: bold;">
+Changes since 2.1.00<br>
+</span>- include channel access to display live data from IOCS<br>
+- note: this was an internal release, with polling and unchanged
+property sheets<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.1.01-1 Adding comment text drops the last character<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.1.01)</h2>
+<span style="font-weight: bold;">
+Changes since 2.1.00<br>
+</span>- more code rationalization<br>
+- establish field defaults based on DBF_ &nbsp;type and dbd initial
+value<br>
+- add option "usedbdproperties", which writes only non-default fields
+to the database<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>2.1.00 during db building there is no check if a wire ends
+at a
+non-record symbol port<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>2.1.01-1 Adding comment text drops the last character<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex">Release Notes &nbsp;(2.1.00)</h2>
+<span style="font-weight: bold;">
+Changes since 2.0.02 and 2.0.03<br>
+</span>- more code rationalization<br>
+- move checking for epics record and hwio into the symbol library class<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span><br>
+<span style="font-weight: bold;">Known bugs and
+issues&nbsp;<br>
+</span>2.1.00 during db building there is no check if a wire ends
+at a
+non-record symbol port<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect
+<h2 class="noindex">Release Notes &nbsp;(2.0.02)</h2>
+<span style="font-weight: bold;">
+Changes since 2.0.02<br>
+</span>- added null-pointer checking in SymbolInstance constructor<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex">Release Notes &nbsp;(2.0.01)</h2>
+<span style="font-weight: bold;">
+Changes since 2.0.01<br>
+</span>- removed DefaultSymbol class, treat all epics and default
+path
+symbols as epics symbols and flag the few non-epics ones within the
+EpicsSymbol class<br>
+<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(2.0.00)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.20<br>
+</span>- full dbd file parser<br>
+- property sheets show all properties from dbd<br>
+- colorcode the field names in the properties dialog<br>
+&nbsp;&nbsp;&nbsp; black = default value from dbd<br>
+&nbsp; &nbsp; red &nbsp; &nbsp;= default value from
+epics symbol<br>
+&nbsp; &nbsp; blue &nbsp;= &nbsp;instance property<br>
+- colorcode link ports if the link is not NPP NMS<br>
+- improve property sheet. Prevent editing of columns 1, 2, 3<br>
+- improve error checking of cfg file<br>
+- add [option] macro_in_menu_warn to suppress warning messages<br>
+- add [option] usedbdproperties &nbsp;(not Capfast compatible)<br>
+<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<hr style="width: 100%; height: 2px;">
+<h2 class="noindex"><br>
+</h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.20)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.19<br>
+</span>- improve error messages<br>
+- add [helppath] directive for cfg file<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<br>
+<h2 class="noindex">Release Notes &nbsp;(1.0.19)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.18<br>
+</span>- allow macros in "menu" fields. If a macro is found, it
+is
+included in the drop-down menu<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>
+1.0.18-1 see changes<br>
+1.0.18-2 see changes<br>
+1.0.18-3 command line building does not &nbsp;check for correct
+menu
+values against dbd<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;fix: warning is
+issued<br>
+1.0.18-4 if more than one dbd file is loaded, menus defined in the
+earlier loads are overwritten<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;fix: early loads
+are not overwritten, later loads of an existing menu are ignored<br>
+1.0.18-5 include directives in dbd files are not recognized.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; fix: allow include within record
+definitions<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+1.0.19-1 null pointer exception if a user symbol is not found<br>
+<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.18)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.17<br>
+</span>- none<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>
+1.0.17-1 "gemini" options addnppnms is added to constant links<br>
+1.0.17-2 exception not caught if macro parenthesis are not balanced<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+1.0.18-1 tdct resets enum fields to 0 in property dialog, if the
+correct string is not in dbd. Should not touch, but raise message<br>
+1.0.18-2 capfast tolerated macros in menu fields. Need warnings about
+that when popping up property dialog.<br>
+1.0.18-3 command line building does not &nbsp;check for correct
+menu
+values against dbd<br>
+1.0.18-4 if more than one dbd file is loaded, menus defined in the
+earlier loads are overwritten<br>
+1.0.18-5 include directives in dbd files are not recognized.<br>
+<br>
+<h2 class="noindex">Release Notes &nbsp;(1.0.17)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.16<br>
+</span>- none<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>1.0.16-1 copy/paste does not work the second time..<br>
+1.0.16-2&nbsp;paste location is not following the mouse<br>
+1.0.16-3 pasting groups of symbols with wire connections messes up some
+wires<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+1.0.17-1 "gemini" options addnppnms is added to constant links<br>
+1.0.17-2 exception not caught if macro parenthesis are not balanced<br>
+<h2 class="noindex">Release Notes &nbsp;(1.0.16)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.15<br>
+</span>- add command line switch -i, which allows to provide
+schematic
+name on command line<br>
+- add command line switch -cfg, which allows to provide configuration
+file on command line<br>
+- add command line switch -dbd, which allows to provide dbd file on
+command line<br>
+- add command line switch -start, wich allows to override the [startup]
+directive<br>
+- add File/Close Tab to menu<br>
+- add Problem menu for display of configuration problems<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>
+1.0.15-1 tab name sometimes gets confused (may be fixed with 1.0.15-4)<br>
+1.0.15-2 symbol editor does not allow renaming of ports<br>
+1.0.15-3 menu issues when changing cfg file.<br>
+1.0.15-4 after saving a file, externally modified dialog pops up.<br>
+1.0.15-5 configuration errors are not properly displayed after change
+of config file<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+1.0.15-1 tab name sometimes gets confused (may be fixed with 1.0.15-4)<br>
+1.0.16-1 copy/paste does not work the second time..<br>
+1.0.16-2&nbsp;paste location is not following the mouse<br>
+1.0.16-3 pasting groups of symbols with wire connections messes up some
+wires<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.15)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.14</span><br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>1.0.14-1 database build error messages are not printed to
+stdout, if run without graphics<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+1.0.15-1 tab name sometimes gets confused<br>
+1.0.15-2 symbol editor does not allow renaming of ports<br>
+1.0.15-3 menu issues when changing cfg file.<br>
+1.0.15-4 after saving a file, externally modified dialog pops up.<br>
+1.0.15-5 configuration errors are not properly displayed after change
+of config file<br>
+<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.14)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.13<br>
+</span><br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>1.0.13-1 gemini records, which used PV property, produced
+incorrect &nbsp;database files<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+1.0.14-1 database build error messages are not printed to stdout, if
+run without graphics<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<br>
+<span style="font-weight: bold;"></span><br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.13)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.12<br>
+</span>- added command line switch -db for batch to override
+database
+output directory<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>none<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.12)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.11<br>
+</span>- bug fixes<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>1.0.11-1 wire-nets were not correctly identified in some
+pathological cases<br>
+1.0.11-2 reloading of externally changed schematic/symbol could lead to
+near-endless loop if file-server time is different from local time<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.11)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.10<br>
+</span>- allow environment variables in paths in configuration
+file<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>1.0.10-1 large drawings flicker because of too many
+redraws and
+unnecessary background redraw<br>
+1.0.10-2 new wire drawing allowed more than one segment horizontal (or
+vertical) in sequence<br>
+<span style="font-weight: bold;">
+</span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.10)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.9<br>
+</span>- macro expansion: make new macro immediately available
+for
+following properties<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>1.0.9-1 - DbCompareFull: field comparison has bug, which
+does
+not
+take into account the removal of&nbsp;double quotes before
+comparison<br>
+1.0.9-2 - geminiMacroSubstitute did not strip #n from symbol ID as e2db
+seems to do.<br>
+1.0.9-3 - user-renamable symbol ports not handled properly when
+generating db<br>
+1.0.9-4 - after new wire draw, menu was sometimes not fully reenabled<br>
+<span style="font-weight: bold;">
+</span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.9)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.8<br>
+</span>- bugs fixed<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>1.0.8-1 incorrect parsing led to space insertion between
+record
+and field<br>
+1.0.8-2 macro with null value was not &nbsp;substituted as ""<br>
+1.0.8-3 makeLinkTarget in SymbolInstance.java did not identify hwin /
+hwout correctly. Worked for TRIUMF usage, but not in general<br>
+1.0.8-4 tdct would add .NPP.NMS to empty link field<br>
+<span style="font-weight: bold;">
+</span><br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.8)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.7<br>
+</span>- improve font handling (vertical justification
+implemented)<br>
+- display version and configuration file in frame title<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed<br>
+</span>- none -<span style="font-weight: bold;"><br>
+</span>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.7)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.6<br>
+</span>- changed all direct debug printouts to debugPrint() calls<br>
+- handle link attributes CA, CP, CPP properly<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex">Release Notes &nbsp;(1.0.6)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.5<br>
+</span>- bugs fixed. <br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+1.0.5-1&nbsp;&nbsp;&nbsp; symbol drawing: if one is in a
+draw mode,
+selection should not be possible<br>
+1.0.5-2&nbsp;&nbsp;&nbsp; symbol drawing: vector drawing is
+screwy -
+after first segment draws orthogonal<br>
+1.0.5-3&nbsp;&nbsp;&nbsp; symbol
+drawing:&nbsp;selection rectangle does
+not work<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.27-1 the detached window viewport scrolling does not
+work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.5)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.5<br>
+</span>- bug fixed<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+1.0.4-1 copy/paste and cut/past would not properly snap to grid<br>
+1.0.4-2 dragging wire end-points sometimes shows wrong "not connected"
+circle<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span><big><big><span style="font-weight: bold;"></span></big></big>1.0.5-1&nbsp;&nbsp;&nbsp;
+symbol drawing: if one is in a draw mode, selection should not be
+possible<br>
+1.0.5-2&nbsp;&nbsp;&nbsp; symbol drawing: vector drawing is
+screwy<br>
+1.0.5-3&nbsp;&nbsp;&nbsp; symbol
+drawing:&nbsp;selection rectangle does
+not work<br>
+0.99.27-1 the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.4)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.4<br>
+</span>- bug fixed<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+1.0.3-1 name property not properly picked up in analyzeRecord function
+of SymbolInstance.<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span><big><big><span style="font-weight: bold;"></span></big></big>0.99.27-1
+the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.3)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.3<br>
+</span>- bug fixed<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+1.0.2-1 duplicate record check during database building did not take
+gemini name substitution into account.<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span><big><big><span style="font-weight: bold;"></span></big></big>0.99.27-1
+the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.2)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.1<br>
+</span>- bugs fixed<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+1.0.1-1 null pointer exception if -s switch was given but no -m switch<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span><big><big><span style="font-weight: bold;"></span></big></big>0.99.27-1
+the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.1)</h2>
+<span style="font-weight: bold;">
+Changes since 1.0.0<br>
+</span>- add menu options to File menu for saving/restoring tab
+configurations<br>
+- debug change of configuration file<br>
+- recent file lists are maintained by configuration file<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+0.99.29-1 focus issue with property dialog. Do proper repainting.<br>
+0.99.29-2 focus issue with main frame. Windows issue. Create property
+dialogs without parent.<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span><big><big><span style="font-weight: bold;"></span></big></big>0.99.27-1
+the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(1.0.0)</h2>
+<span style="font-weight: bold;">
+Changes since Beta0.99.29<br>
+</span>- add menu option build current canvas with macros<br>
+- add command line switch -s for specifying a schematic for building
+.db without graphics display (gemini inspired)<br>
+- add options directives (gemini inspired)<br>
+[options] override name<br>
+<div style="margin-left: 40px;">looks for symbol property
+"name". If
+present, uses it as record name (after macro substitution. Macro $(I)
+is expanded to the&nbsp;symbol ID as drawn on the schematics.<br>
+</div>
+[options] addnppnms<br>
+<div style="margin-left: 40px;">
+adds .NPP.NMS to link fields &nbsp;(EPICS default) to allow better
+database comparision<br>
+</div>
+<span style="font-style: italic;">
+- </span>check schematic for before saving for<br>
+--- duplicate symbol IDs &gt;&gt; refuse to save<br>
+--- unconnected wires &gt;&gt; refuse to save<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+none<br>
+<br>
+<span style="font-weight: bold;">Known bugs and
+issues&nbsp;<br>
+</span><big><big><span style="font-weight: bold;"></span></big></big>0.99.27-1
+the detached window viewport scrolling does not work<br>
+0.99.29-1 focus issue with property dialog. Needs two clicks.<br>
+0.99.29-2 focus issue with main frame. Stays behind property dialogs.<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.29)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.26<br>
+</span>- allow duplicate hierarchy connectors with the same id.
+For
+this I added the configuration directives:<br>
+[options] duplicate_connectors<br>
+[options] duplicate_connector_warn<br>
+<span style="font-style: italic;">
+- </span>check schematic for before saving for<br>
+--- duplicate symbol IDs &gt;&gt; refuse to save<br>
+--- unconnected wires &gt;&gt; refuse to save<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+none<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span><big><big><span style="font-weight: bold;"></span></big></big>0.99.27-1
+the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.27)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.26<br>
+</span>- added menu item <span style="font-style: italic;">Options
+&gt;&gt; Show source<br>
+- </span>right-clicking on a tab opens schematics / symbol in
+detached
+window &nbsp;(this feature is not even alpha yet)<br>
+&nbsp; feature is enabled with the <span style="font-family: monospace;">[options] detachwindow</span>
+&nbsp;directive <br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+none<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span><big><big><span style="font-weight: bold;"></span></big></big>0.99.27-1
+the detached window viewport scrolling does not work<br>
+0.99.27-2 printing viewport is incorrect<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.26)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.25<br>
+</span>- added menu item <span style="font-style: italic;">Database
+&gt;&gt; Set output directory</span><br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+0.99.24-1: fixed the bounding box issue when editing a symbols<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span><big><big><span style="font-weight: bold;"></span></big></big><br>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.25)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.24<br>
+</span>- improved error reporting when components are not found<br>
+- converted to eclipse/jigloo<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.24-1: modifying a symbol produces a questionable
+bounding
+box - needs investigation
+<big><big><span style="font-weight: bold;"></span></big></big><br>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.24)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.24<br>
+</span>- added middle-drag to have same functionality as
+CTRL-left-drag
+&nbsp;(select area)<br>
+- changed colour implementation using TdctColour class. Colours are now
+configurable in config file<br>
+- add report of unconnected wires, &nbsp;?? macros, and duplicate
+records to database build report.<br>
+- allow only orthogonal wire-junctions<br>
+- database suffix can be set via "option dbsuffix ...." in the
+configuration file. Program default has been changed to the equivalent
+of:<br>
+&nbsp;&nbsp;&nbsp; <span style="font-family: monospace;">option
+dbsuffix _tdct.db<br>
+</span><br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+0.99.23-1: fixed<br>
+0.99.23-2:&nbsp;If mouse is in top 10% of canvas, paste to centre
+of
+viewport.<br>
+0.99.23-3: if value propert starts with # or @ , don't append MS or PP<br>
+0.99.23-4: fixed<br>
+0.99.23-5:&nbsp;fixed<br>
+0.99.23-6: replace boolean junctionlimit flag with WireSegment
+junction_segment<br>
+0.99.23-7: loop in findLimitingSegment ignores self wire<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues </span>
+<span style="font-weight: bold;"><br>
+</span><br>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.23)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.23<br>
+</span>- fixed issues around the consolidate() function (remove
+only
+one point if equal points are at wire end, do proper reconnect)<br>
+- when moving a wire end-point and the mouse is hovering over a symbol
+port, change cursor to hand<br>
+- when a wire point is added to a new wire and the point is
+"connectable", finish wire editing<br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+0.99.22-1: do proper snap before placing the symbol<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.99.23-1: wire cannot be started at a port, leaves 0
+length wire<br>
+0.99.23-2: paste from menu leaves pasted objects at top-left corner
+(where the mouse is)<br>
+0.99.23-3: if a hardware input contains an address, MS isappened if the
+input link has MS (probably also PP)<br>
+0.99.23-4: issues connecting a hardware record with a wire to a port<br>
+0.99.23-5: hw input connected to a port with a non-zero length wire is
+not recognized.<br>
+0.99.23-6: moving a wire point of a segment with a junction at the
+other end sometimes changes the orientation of &nbsp;the segment<br>
+0.99.23-7: sometimes, junction move limits are not recognized
+<h2 class="noindex"></h2>
+<br>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;">
+</span>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.22)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.21<br>
+- </span>configuration files moved to folder &nbsp; .tdct
+&nbsp; under
+the user's home directory<br>
+- database generation takes record type from edb.def file (before this
+was taken from the Type field of the EPICS record symbol, which is used
+inconsistently and wrongly). <br>
+<span style="font-weight: bold;"><br>
+Bugs fixed</span><br>
+0.99.21-1: temporarily use edb.def sequence of fields for database
+generation (should use dbd in the long run)<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues<br>
+</span>0.99.22-1: placing a new symbol does not place it properly
+onto
+the grid<br>
+<br>
+<span style="font-weight: bold;">
+</span>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.21)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.20<br>
+<span style="color: rgb(255, 0, 0);">** NOTE:
+configuration file format
+changed **</span><br>
+</span>
+- Recent file list adds files opened by other tdct instances while this
+instance was open<br>
+- Record property dialog resizes in both directions<br>
+- changed check-boxes in record property dialog to toggle-buttons for
+property and symbol name move<br>
+- added menu item for hierarchical directors to Symbol menu<br>
+- added menu item for adding frames to Frame menu<br>
+&nbsp;<br>
+<span style="font-weight: bold;">Bugs fixed</span><br>
+0.99.20-1: added WindowFocusListener to TdctView<br>
+0.99.20-2: fixed flag handling<br>
+0.99.20-3: fixed default id<br>
+0.99.20-4: fixed. use promptgroup in dbd to make field DCTable<br>
+0.99.20-5: fixed. symbol instance copy must copy drag_start_point<br>
+0.99.20-6: caused by null pointer exception of 0.99.20-5<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues </span><span style="font-weight: bold;"><br>
+</span>0.99.21-1<br>
+database build has fields in unloadable sequence<br>
+<h2 class="noindex"></h2>
+<h2 class="noindex"></h2>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.21)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.20<br>
+<span style="color: rgb(255, 0, 0);">** NOTE:
+configuration file format
+changed **</span><br>
+</span>
+- Recent file list adds files opened by other tdct instances while this
+instance was open<br>
+- Record property dialog resizes in both directions<br>
+- changed check-boxes in record property dialog to toggle-buttons for
+property and symbol name move<br>
+- added menu item for hierarchical directors to Symbol menu<br>
+- added menu item for adding frames to Frame menu<br>
+&nbsp;<br>
+<span style="font-weight: bold;">Bugs fixed</span><br>
+0.99.20-1: added WindowFocusListener to TdctView<br>
+0.99.20-2: fixed flag handling<br>
+0.99.20-3: fixed default id<br>
+0.99.20-4: fixed. use promptgroup in dbd to make field DCTable<br>
+0.99.20-5: fixed. symbol instance copy must copy drag_start_point<br>
+0.99.20-6: caused by null pointer exception of 0.99.20-5<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues </span><span style="font-weight: bold;"><br>
+</span>0.99.21-1<br>
+database build has fields in unloadable sequence<br>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.20)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.19</span><br>
+- add &nbsp;File &gt;&gt; Open Recent<br>
+- frames can now be deleted<br>
+- frames can be added by name<br>
+- config file options<br>
+&nbsp;&nbsp;&nbsp; - enable debug print<br>
+&nbsp;&nbsp;&nbsp; - enable change of &nbsp;config file<br>
+- improved consistency of wire editing:<br>
+&nbsp;&nbsp;&nbsp; - removed insert wire point (after
+selected point)
+and delete selected wire point <br>
+&nbsp;&nbsp;&nbsp; - adding wire segment at begin or end of
+wire works
+the same in wire edit mode or wire selected mode<br>
+&nbsp;&nbsp;&nbsp; - in wire edit mode, color change of a
+point
+selection rectangle happens now on mouse press<br>
+&nbsp;&nbsp;&nbsp; - leave wire edit mode only on
+right-click or ESC<br>
+&nbsp;<br>
+<span style="font-weight: bold;">Bugs fixed<br>
+</span>0.996-1: &nbsp;removed the insert and delete point
+functions.<br>
+0.99.18-1:&nbsp; add frames to bounding box calculation<br>
+0.99.18-2:&nbsp; calc symbol total bounds correctly<br>
+0.99.19-1:&nbsp; moved check from focus event to tab-changed event<br>
+0.99.19-2: Update load time when file is saved or saved as.<br>
+<br>
+<span style="font-weight: bold;">Known bugs and issues </span><span style="font-weight: bold;"><br>
+</span>0.996-2<br>
+There are glitches if a schematic is open more than once and is edited.<br>
+0.996-3<br>
+There is an issue in database building with MS and PP fields, although
+I suspect there is a bug in either sch2edif or (more likely) in e2db.<br>
+0.99.20-1<br>
+(RN) external change not recognised when main window gains focus<br>
+0.99.20-2<br>
+(RN) add/delete wire brings up external change dialog<br>
+0.99.20-3<br>
+(RN) a new wire connected to 2 symbols has bad network number(n#..#..)<br>
+0.99.20-4<br>
+(RN) record property dialog does not edit FTVL field<br>
+0.99.20-5<br>
+(RN) copy/paste of record with hwout has problems with the connecting
+wire<br>
+0.99.20-6<br>
+(RN) after copy/paste selected (red) items cannot be dragged<br>
+<br>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.19)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.18</span><br>
+- add &nbsp;check for external change of drawing file. Pop up
+dialog.<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.996-1<br>
+The "insert point" and "delete point" functions in wire-edit mode are
+not debugged yet<span style="font-weight: bold;"><br>
+</span>0.996-2<br>
+There are glitches if a schematic is open more than once and is edited.<br>
+0.996-3<br>
+There is an issue in database building with MS and PP fields, although
+I suspect there is a bug in either sch2edif or (more likely) in e2db.<br>
+0.99.18-1<br>
+If there are only frames in a schematic, initial zoom is wrong<br>
+0.99.18-2<br>
+loading a symbol, initial zoom is wrong<br>
+0.99.19-1<br>
+Repainting after closing the pop-up dialog indicating an external
+change does not redraw properly.<br>
+0.99.19-2<br>
+External change dialog pops up after "save as". &nbsp;<br>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.99.18)</h2>
+<span style="font-weight: bold;">
+Changes since 0.99.14</span><br>
+<br>
+- added symbol editor<br>
+- fixed selection rectangle to draw in arbitrary direction<br>
+- removed the "multiple instances dialog", double-clicking on a symbol
+drills down, but does not create multiple schematic instances<br>
+- file open and double-clicking on a schematic tab opens multiple
+instances<br>
+<br>
+I did not keep track of &nbsp;changes by release after 0.996<br>
+I changed numbering after 0.998 to 0.99. xx as I don't want to make a
+production release yet<br>
+<span style="font-weight: bold;">
+Changes since 0.996</span><br>
+- Record/Symbol property dialog now non-modal. <br>
+- multiple property dialogs across different canvases <br>
+- add File/Print to print current viewport<br>
+<span style="font-weight: bold;">Fixes since 0.996</span><br>
+- capfast network numbering replaced with hopefully more bug-free one<br>
+&nbsp; &nbsp;(separated the network number from the wire id)<br>
+- allow display of multiple frames<br>
+- fix double-painting on zooming<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.996-1<br>
+The "insert point" and "delete point" functions in wire-edit mode are
+not debugged yet<span style="font-weight: bold;"><br>
+</span>0.996-2<br>
+There are glitches if a schematic is open more than once and is edited.<br>
+0.996-3<br>
+There is an issue in database building with MS and PP fields, although
+I suspect there is a bug in either sch2edif or (more likely) in e2db.<br>
+0.99.18-1<br>
+If there are only frames in a schematic, initial zoom is wrong<br>
+0.99.18-2<br>
+loading a symbol, initial zoom is wrong<br>
+<br>
+<h2 class="noindex">Release Notes &nbsp;(Beta 0.996)</h2>
+<br>
+<span style="font-weight: bold;">
+Changes / Fixes for this release</span><br>
+- undo cut implemented<br>
+- undo move implemented<br>
+- cut/copy - paste is fixed<br>
+- allow loading of more than one schematic (i.e. without using
+hierarchy)<br>
+- PV property is manipulated through the record name, not as a property
+any more<br>
+- dragging of wire-point has been debugged (until proven otherwise)<br>
+<span style="font-weight: bold;">Known bugs and issues <br>
+</span>0.996-1<br>
+(this list is out-of date)<br>
+The "insert point" and "delete point" functions in wire-edit mode are
+not debugged yet<span style="font-weight: bold;"><br>
+</span>0.996-2<br>
+There are glitches if a schematic is open more than once and is edited.<br>
+0.996-3<br>
+There is an issue in database building with MS and PP fields, although
+I suspect there is a bug in either sch2edif or (more likely) in e2db.
+<ul>
+</ul>
+<br>
+<big><big><span style="font-weight: bold;"></span></big></big><br>
+<big><big>Notes about Capfast peculiarities:<br>
+<br>
+<small><small>There is (at least for me) a big
+inconsistency in the
+capfast symbol fields. There must be something I do not understand and
+have to follow up once I'm back.<br>
+<br>
+&nbsp;For example, the eais symbol has a def(INP) property, but no
+pproc(INP) and no palrm(INP), but it has pproc and palrm for the SDIS
+link.<br>
+Same for many other symbols. In this case, how can one set up PP or MS
+for the input field in CAPFAST?<br>
+<br>
+eaos has def, pproc, and palrm for DOL and SDIS, but only def for OUT.<br>
+<br>
+</small></small></big></big><big><big><small><small>Marty
+Kraimer's
+record reference manual (3.13)
+gives some scanning examples using Capfast screen dumps, where he has
+PP on the wires like a wire name. I suspect, this is just for
+demonstration.<br>
+<br>
+</small></small></big></big><br>
+<big><big><small><small><br>
+<br>
+<big>And one about e2db:</big><br>
+e2db uses the network numbers. Wires with the same networks are checked
+for multiple input or output ports.<br>
+<br>
+Either sch2edif or e2db has a bug as the MS (and probably PP)
+&nbsp;are
+not propagated down into a lower level. See &nbsp;ios_i for
+example. I
+think my building is correct.<br>
+What I know today (20081008):<br>
+- palrm(MS) on an input link to a record in the same schematic is
+propagated ok.<br>
+</small></small></big></big><big><big><small><small>-
+palrm(MS) on a
+hierarchical input connector to a record in a parent schematic is
+propagated ok.<br>
+</small></small></big></big><big><big><small><small>-
+palrm(MS) on&nbsp;</small></small></big></big><big><big><small><small>a
+hierarchical input connector to a hardware input&nbsp;</small></small></big></big><big><big><small><small>
+in a parent schematic which contains a record name is <span style="font-weight: bold;">not</span> propagated ok.</small></small></big></big><br>
+<br>
+<br>
+</body></html>

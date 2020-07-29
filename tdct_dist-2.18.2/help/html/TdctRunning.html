@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Running Tdct</title>
+
+<meta content="Rolf Keitel" name="author">
+</head>
+<body>
+<h2><a name="Running_Tdct">Running Tdct</a></h2>
+<br>
+If you are looking at this from the tdct on-line help, you are already
+beyond this point.<br>
+If you peeked at the HTML files in the distribution, however, this
+section may be of interest to you.<br>
+<br>
+Use your java installation to run the distributed tdct.jar file.
+Something like <br>
+<br>
+<span style="font-family: monospace;">java -jar tdct.jar</span><br>
+<br>
+<h3><a name="Java_version_check">Java Version Check</a></h3>
+On startup, tdct performs a version check on the JRE and exits with an
+exception if the Java version is too old.<br>
+This version check is not performed, if the tdct is started with
+-ignoreversion as the <span style="font-weight: bold; font-style: italic;">first</span>
+command line parameter.
+<h3><a name="Running_Tdct_with_Command_Line">Running
+Tdct with Command Line Switches</a></h3>
+<span style="font-weight: bold;">Specify a non-default
+configuration file</span><br>
+<span style="font-family: monospace;"><br>
+-cfg &lt;cfg file full path&gt;</span><br>
+If this switch is specified, tdct uses the specified configuration file
+instead of the default.<br>
+<br>
+-cfg startup<br>
+If this switch is specified, tdct attempts to find tdct.cfg in the
+current directory<br>
+<br>
+<span style="font-weight: bold;">Specify a dbd file on the
+command line</span><br>
+<span style="font-family: monospace;"><br>
+-dbd &lt;dbd file&gt;</span><br>
+If this switch is specified, tdct uses the specified dbd file, ignoring
+any [dbdpath] and [dbdfiles] directives in the cfg file.<br>
+Note: &lt;dbd file&gt; must include the path.<br>
+<br>
+<br>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;">Starting tdct with a schematics
+name in order to bypass the File/Open dialog:</span><br>
+<span style="font-family: monospace;"><br>
+-i &lt;schematic name&gt;</span><br>
+If this switch is specified, Tdct starts in "graphics" mode and loads
+the given schematic from the specified directory. If only a file name
+(no path) is given and no -start command line switch is present, the
+current user directory is used.<br>
+<br>
+<br>
+<span style="font-weight: bold;">Overriding the startup
+directory, which was given in the cfg file:</span><br>
+<span style="font-family: monospace;"><br>
+-start &lt;path&gt;</span><br>
+If this switch is specified, the startup directory (initial directory
+for the File/Open dialog) is set to path.<br>
+<br>
+<span style="font-weight: bold;">Specifying additional
+user paths:</span><br>
+<span style="font-family: monospace;"><br>
+-tup &lt;paths&gt;</span><br>
+If this switch is specified, the user paths specified with
+&lt;paths&gt; will precede the user paths specified in the
+configuration file when searching for user symbols..<br>
+<br>
+<span style="font-weight: bold;">Control the
+sun.jav2d.pmoffscreen parameter:</span><br>
+<span style="font-family: monospace;"><br>
+-xr &lt;true | false&gt;</span><br>
+Set the value of the&nbsp;<a href="https://docs.oracle.com/javase/7/docs/technotes/guides/2d/flags.html">sun.jav2d.pmoffscreen</a>
+parameter.<br>
+<br>
+<br>
+<span style="font-weight: bold;">Change the mouse button
+assignment for drawing the zoom rectangle:<br>
+<br>
+</span><span style="font-family: monospace;">-z
+&lt;button&gt;</span><br>
+This switc<span style="font-family: monospace;"></span>h
+takes 1 or 2 as argument and allows assignment of which mouse buttons
+(1 = left, 2 = middle)
+will draw the zoom rectangle. The other button will draw the selection
+rectangle.<br>
+<br>
+<br>
+<span style="font-weight: bold;">The following switches
+are for running tdct from the command line in "no graphics"
+mode.&nbsp;<br>
+With these switches tdct&nbsp; functions as a&nbsp;EPICS
+database builder only.</span><br>
+<br>
+<span style="font-family: monospace;">-s &lt;schematic
+name&gt;</span><br>
+If this switch is specified, Tdct runs without graphics and builds the
+schematic into an EPICS runtime database.<br>
+<br>
+<span style="font-family: monospace;">-st
+&lt;schematic name&gt;</span><br>
+If this switch is specified, Tdct runs without graphics and builds the
+schematic into an EPICS runtime database <span style="font-weight: bold;">template</span>.<br>
+<br>
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">-m &lt;macro
+string&gt;</span><br>
+This switch is only useful, if -s was specified. The macro string is
+parsed and the macro name-value-pairs specified are used in the
+database build process.<br>
+<br>
+<span style="font-family: monospace;">-db &lt;data
+base directory&gt;</span><br>
+This switch overrides the database output directory specified in the
+configuration file.<span style="font-family: monospace;"></span><br>
+<br>
+<span style="font-family: monospace;">-o &lt;output
+file name&gt;</span><br>
+This switch is only useful, if -s or -st were specified. The generated
+datahase has the name <span style="font-family: monospace;">&lt;output
+file name&gt;. <br>
+</span>The&nbsp; <span style="font-family: monospace;">&lt;output
+file name&gt;</span><span style="font-family: monospace;">
+</span>must not have the extension<span style="font-family: monospace;"> .sch or .sym.<br>
+</span><br>
+<br>
+<span style="font-weight: bold;">The following switches
+are for running tdct from the command line in "no graphics" mode. <br>
+With these switches tdct&nbsp; functions as a converter for
+schematics from "<a href="../../../../../netbeans-projects/tdct/src/help/html/TdctCompatibility.html">Compatibility
+Mode</a>" to "Dbd Mode".<br>
+<br>
+</span>-todbd &lt;output directory&gt; <br>
+-from &lt;input_directory&gt;<br>
+If these switches are specified, tdct
+converts schematics from Compatiblity Mode to Dbd Mode. The output
+directory must be different from the input directory.<br>
+If no -s switch is given, all schematics in the input directory are
+converted to Dbd Mode and saved to the ouput directory.<br>
+<br>
+<span style="font-weight: bold;">-s </span>&lt;schematic
+name&gt;<br>
+If this switch is specified together with the -todbd switch and -from
+switch&nbsp; tdct runs without graphics and converts the schematic
+to Dbd Mode.<br>
+<br>
+<br>
+<span style="font-weight: bold;">The following switches
+are useful for debugging tdct.</span><br>
+<br>
+-dbg &lt;true &nbsp;| false&gt;<br>
+If this switch is set to true, debug printouts are enabled.<br>
+<br>
+-pwr &lt;true | false&gt;<br>
+If this switch is set to true, detailed debug information about
+wire-link resolution is printed during database building.<br>
+<span style="font-weight: bold;"></span><br>
+</body></html>

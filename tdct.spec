@@ -2,7 +2,7 @@
 %define gemopt opt
 %define version 3.15.8
 %define name tdct
-%define _release 2.17.5
+%define _release 2.18.2
 %define repository gemdev
 %define debug_package %{nil}
 %define arch %(uname -m)
@@ -42,9 +42,12 @@ EPICS is a set of Open Source software tools, Vlibraries and applications develo
 
 %install
 mkdir -p %{buildroot}/%{_prefix}
-pwd
-ls
-cp -r %{name}-%{_release} %{buildroot}/%{_prefix}/%{name}
+mkdir -p %{buildroot}/gem_base/etc
+
+cp -r %{name}_dist-%{_release} %{buildroot}/%{_prefix}/%{name}
+cp -r sym %{buildroot}/%{_prefix}/%{name}/
+cp -r library %{buildroot}/%{_prefix}/%{name}/
+cp etc/tdct.* %{buildroot}/gem_base/etc/
 
 %post
 

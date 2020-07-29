@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Tdct Symbol Editor</title><meta content="Rolf Keitel" name="author"></head>
+<body>
+<h2><a name="Symbol_Editor">Symbol Editor</a></h2>
+<br>
+<a href="#Introduction">1. Introduction</a><br>
+<a href="#Symbol_Elements">2. Drawing Symbol Elements</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Graphics_Elements">2.1
+Graphics Elements</a><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a href="#Rectangle">2.1.1 Rectangle</a><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a href="#Circle">2.1.2 Circle</a><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a href="#Arc">2.1.3 Arc</a><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a href="#Vector">2.1.4 Vector</a><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a href="#Label">2.1.5 Label</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Ports">2.2
+Ports</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Symbol_Properties__Macros">2.3
+Symbol Properties
+/ Macros</a><br>
+<a href="#Moving_a_Symbol_Element">3
+Moving&nbsp;Symbol Elements</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Drawing_a_Symbol_Property">3.1
+Drawing a Symbol Property</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Viewing_Symbol_Properties">3.2
+Viewing Symbol Properties</a><span style="font-weight: bold;"><br>
+</span><a href="#Modifying_Symbol_Elements">4
+Modifying Symbol Elements</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Modify">4.1
+Modifying a Label or Symbol property</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#modify_object">4.2
+Modifying a Rectangle, Circle, Arc, or
+Vector</a><br>
+<a href="#Deleting_a_Symbol_Element">5. Deleting a Symbol
+Element</a><br>
+<a href="#Fromschematic">6. Creating a Symbol from a
+Schematic</a><br>
+<a href="#ScalingHelp">7. Scaling Help for "Fancy" Symbols</a><br>
+<br>
+<h2>1. <a name="Introduction">Introduction to
+Symbol Editing</a></h2><big>The symbol editor is intended for creation of new user symbols or new EPICS record symbols.<br><br></big><span style="font-weight: bold;"><big style="font-style: italic;">Warning<br></big></span><big style="font-style: italic;">Symbols <span style="font-weight: bold;">must </span></big><span style="font-weight: bold;"><big style="font-style: italic;">never </big></span><big style="font-style: italic;">be modified once they are used on a schematic.</big><span style="font-weight: bold;"><br></span><br>The Symbol editor is an integral part of the tdct application. It
+allows drawing of the following elements:<br>
+<ul>
+<li>graphics elements</li>
+<ul>
+<li>rectangles</li>
+<li>circles</li>
+<li>arcs</li>
+<li>vectors (lines)</li>
+<li>labels</li>
+</ul>
+<li>ports</li>
+<ul>
+<li>input ports with or without bulb</li>
+<li>output ports with or without bulb</li>
+</ul>
+<li>symbol properties</li>
+</ul>
+<span style="font-style: italic;"><span style="font-weight: bold;"></span></span><span style="font-style: italic;"><br>
+</span>The selected drawing mode is displayed on the status bar.
+A
+drawing mode can be aborted at any time by pressing the ESC key.<br>
+<br>
+New symbols are created by selecting from the main menu: &nbsp;<span style="font-style: italic;">File &gt;&gt; New Symbol.</span><br>
+Existing symbols are opened from the main menu: <span style="font-style: italic;">File &gt;&gt; Open
+Symbol.<br>
+</span>Recently modified symbols are opened from the main menu: <span style="font-style: italic;">File &gt;&gt; Open
+Recent.<br>
+<br>
+</span>The Symbol Editor and the Schematics Editor can be active
+in the
+same session. Multiple symbols and schematics can be edited in the same
+session in different tabs.<br>
+<br>
+When a user symbol is edited and saved, all symbol instances using this
+user symbol will be updated on all canvases.<br>
+A menu command "<span style="font-style: italic;">Symbol
+&gt;&gt; Reload</span>"
+exists which allows updating of all instances of a selected user
+symbol, in case the symbol has been edited on disk with a text editor.<br>
+<br>
+<h2>2. <a name="Symbol_Elements">Symbol
+Elements</a></h2>
+A symbol may&nbsp;contain three different types of elements:<br>
+<ul>
+<li>graphics elements</li>
+<li>ports</li>
+<li>symbol properties</li>
+</ul>
+<h3>2.1 <a name="Graphics_Elements">
+Graphics Elements</a></h3>
+<h4>2.1.1 <a name="Rectangle">
+Rectangle</a></h4>
+<span style="font-weight: bold;">Drawing a Rectangle</span><br>
+Select from the main menu &nbsp;<span style="font-style: italic;">Draw
+&gt;&gt; Rectangle.<br>
+</span>Press the left mouse button, drag a rectangle and release
+the
+mouse.<br>
+<h4>2.1.2 <a name="Circle">Circle</a></h4>
+<span style="font-weight: bold;">Drawing a Circle</span><br>
+Select from the main menu &nbsp;<span style="font-style: italic;">Draw
+&gt;&gt; Circle.<br>
+</span>Press the left mouse button where you want the circle
+centre,
+drag a rectangle to a point on the circle's circumference and release
+the mouse.<br>
+<br>
+Note: the "active" area for selecting a circle is the bounding
+rectangle.<br>
+<br>
+<h4>2.1.3 <a name="Arc">Arc</a></h4>
+<span style="font-weight: bold;">Drawing an Arc</span><br>
+Select from the main menu &nbsp;<span style="font-style: italic;">Draw
+&gt;&gt; Arc.<br>
+</span>Press the left mouse button where you want the arc's
+circle
+centre, drag a
+rectangle to the starting point of the arc and release the
+mouse. You will be prompted for the arc angle (in degrees).<br>
+<br>
+Note: the "active" area for selecting an arc is the rectange determined
+by the arc's endpoints. Note that this in a somwhat counterintuitive
+selection area for&nbsp;arcs with an angle of more than 180 degrees.<br>
+<h4>2.1.4 <a name="Vector">Vector</a></h4>
+<span style="font-weight: bold;">Drawing a Vector</span><br>
+Select from the main menu &nbsp;<span style="font-style: italic;">Draw
+&gt;&gt; Vector.<br>
+</span>Click the left mouse button for the first point, drag the
+mouse
+to the next location, click for the next point, etc.
+&nbsp;right-click
+to terminate vector drawing.<br>
+Use the ESC key, to abort vector drawing at any moment.<br>
+<h4>2.1.5 <a name="Label">Label</a></h4>
+<span style="font-weight: bold;">Drawing a Label</span><br>
+Select from the main menu &nbsp;<span style="font-style: italic;">Draw
+&gt;&gt; Label.</span><br>
+Press the left mouse button, drag a rectangle and release the mouse.
+You will be prompted for the label text.<br>
+<br>
+<br>
+<br>
+<br>
+<h3>2.2 <a name="Ports">Ports</a></h3>
+Ports are symbol elements to which wires can be attached. <br>
+<br>
+If the symbol represents an EPICS record, a Port represents an EPICS
+record field with the same name.<br>
+If the symbol represents a schematic, a port represents a hierarchical
+connector with the same name on the corresponding schematic.<br>
+<br>
+Note&nbsp;that
+a port consists of two or three elements: a port symbol, a stem
+(horizontal vector) and an optional bulb (a circle at the vector end
+opposite the port symbol.
+The vector and bulb are for optics purposes only. They don't play any
+role in EPICS database building. Especially, the bulb does <big>not</big>
+imply any signal inversion.<br>
+<br>
+Tdct enforces a minimum vertical port spacing in order to allow easy
+connecting of wires to ports.<br>
+<h4>2.2.1 <a name="Input_Ports">
+Input Ports</a></h4>
+<span style="font-weight: bold;">Drawing an Input Port</span><br>
+Select from the main menu &nbsp;<span style="font-style: italic;">Draw
+&gt;&gt; In port</span> or <span style="font-style: italic;">Draw
+&gt;&gt; In port no bulb.<br>
+</span>There are two options for placing the port on the symbol:<br>
+a) left-click the mouse where you want to place the right end of the
+port vector (or the bulb if you draw a port with bulb).<br>
+b) Press
+the left mouse button where you want&nbsp;to place the right end of
+the
+port vector, drag a
+vertically narrow rectangle to the location of the port symbol and
+release the
+mouse.<br>
+<br>
+Note: the the port vector will always be drawn horizontally.<br>
+<h4>2.2.2 <a name="Output_Ports">
+Output Ports</a></h4>
+<span style="font-weight: bold;">Drawing an Output Port</span><br>
+Select from the main menu &nbsp;<span style="font-style: italic;">Draw
+&gt;&gt; Out bort</span> or <span style="font-style: italic;">Draw
+&gt;&gt; Out port no bulb.<br>
+</span>There are two options for placing the port on the symbol:<br>
+a) left-click the mouse where you want to place the left end of the
+port vector (or the bulb if you draw a port with bulb).<br>
+b) Press
+the left mouse button where you want&nbsp;to place the left end of
+the
+port vector, drag a
+vertically narrow rectangle to the location of the port symbol and
+release the
+mouse.<br>
+<br>
+Note: the the port vector will always be drawn horizontally.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>2.3 <a name="Symbol_Properties__Macros">
+Symbol Properties /
+Macros</a></h3>
+A symbol property defines a macro name and a default value for the
+macro. When
+a symbol is instantiated on a schematic, the default value for the
+macro may be overridden. In addition, the symbol property has a
+property name, which is for internal use of tdct only and is
+automatically
+assigned by tdct. The property name is only visible in the schematic
+editor and in the property dialog for user symbols..<br>
+<br>
+On the corresponding schematic, the macro name is used as a placeholder
+in the form $(macro name). When an EPICS database is generated, the
+placeholder is resolved to an
+instance value.<br>
+<br>
+<span style="font-style: italic; font-weight: bold;">&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp; Example:</span><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; The
+symbol defines a property &nbsp;&nbsp;<span style="font-family: monospace;">HW ???<br>
+<br>
+</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; An instance of the symbol &nbsp;is
+placed on &nbsp;a schematic
+and the property value is redefined, say to <span style="font-family: monospace;">HW Modtcp.<br>
+<br>
+</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; If the schematic&nbsp;which
+corresponds to the symbol contains
+the macro <span style="font-family: monospace;">$(HW), </span>it
+will
+be replaced&nbsp;with the macro value<span style="font-family: monospace;"> Modtcp </span>during
+database
+building or on-line display.<br>
+<br>
+<h4><span style="font-weight: bold;">Empty Macro Values</span></h4><span style="font-weight: bold;">
+
+</span>Tdct provides two options in the configuration files to
+deal with empty macro values in different ways:<br>
+<ul>
+<li>empty_macrovalues:
+&nbsp;if set to false, macros with empty values are not substituted
+and
+a warning message is generated during database building.</li>
+<li>empty_macrovalues_warn: &nbsp;if set to true, a macro
+with empty value results
+in a warning message during database building. It is recommended to set
+this option to true if the options empty_macrovalues is set to true.
+This allows detecting of macros with inadvertently empty values.</li>
+</ul>
+If an empty macro value is desired it can be explicitly indicated by
+instantiating the macro value to "".<br>
+<br><h4>Info Node as Symbol Property</h4><h4><span style="font-weight: normal;">When
+a property is added to an EPICS record symbol, it can be marked as an
+info-node by checking the provided check-box. This info-node will be
+added during database building to all EPICS records which are
+instantiated with this symbol.</span></h4>
+<span style="font-weight: bold;"></span><br>
+<br>
+<span style="font-weight: bold;">3.1 <a name="Drawing_a_Symbol_Property">Drawing a Symbol
+Property</a></span><br>
+With no element&nbsp;selected, CTRL-right-click with the mouse at
+the location where
+you want the symbol property displayed.<br>
+Alternatively, use the <span style="font-style: italic;">Properties
+&gt;&gt; Add</span> menu.<br>
+<br>
+You will be prompted to enter the property name and value.<br>
+The format for entering a property&nbsp;must be strictly followed:<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style="font-family: monospace;">&lt;name&gt;
+&lt;value&gt;<br>
+</span>i.e. enter&nbsp;the property name &lt;name&gt;
+separated by one space from the property
+value &lt;value&gt;.<br>
+<br>
+Tdct automatically assigns a property identifier of the form
+set&lt;x&gt;&nbsp;where &lt;x&gt; is an arbitrary
+alphanumeric string. The property is stored in the symbol file in the
+form<br>
+<span style="font-family: monospace;">set&lt;x&gt;:&lt;name&gt;
+&lt;value&gt;.</span><br>
+<br>
+Each property of a symbol must have a unique
+name.<br>
+<br>
+You can set the display mode (<span style="font-style: italic;">Value
+Only, All, Nothing</span>) by selecting the appropriate radio
+button. Default is <span style="font-style: italic;">Value
+Only, </span>which displays <span style="font-family: monospace;">&lt;name&gt;
+&lt;value&gt;. </span>If <span style="font-style: italic;">All</span> is selected,<span style="font-family: monospace;"> <br>
+</span><span style="font-family: monospace;">set&lt;x&gt;:&lt;name&gt;
+&lt;value&gt; </span>is displayed.<br>
+<br>
+<span style="font-weight: bold;">3.2 <a name="Viewing_Symbol_Properties">Viewing Symbol
+Properties</a></span><br>
+<br>
+If you right-click on a symbol canvas when <span style="font-style: italic;">no symbol element is selected </span>a
+dialog with a property sheet for all symbol properties will be
+displayed, which also allows editing of the properties.<br>
+<br>
+<br>
+<br>
+<br>
+<h2>3 <a name="Moving_a_Symbol_Element">
+Moving&nbsp;Symbol Elements</a></h2>
+Each symbol element can be moved by selecting it (color changes to red
+(default)) and dragging to new position.<br>
+<br>
+Special considerations for symbol ports:<br>
+A port consists of &nbsp;two or three elements:<br>
+- the port symbol, which determines the port direction (input or output)<br>
+- the optional port bulb, which is located where the port connects to
+the symbol<br>
+- the port stem which connects the port symbol with the
+bulb&nbsp;or
+(for ports without bulb) with the symbol<br>
+Only the port symbol is important to the function of the symbol, the
+bulb and stem are for optics only.<br>
+<br>
+To move a port, select all three elements by drawing a selection
+rectangle around them. Then drag.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>4. <a name="Modifying_Symbol_Elements">
+Modifying Symbol
+Elements</a></h2>
+<h3>4.1 <a name="Modify">Modifying a Label
+or Symbol Property</a></h3>
+Select the label or property by left-clicking on the text. (Note
+the change of the cursor to a hand, when the mouse is in a position to
+select the item). <br>
+<br>
+You may also draw a selection rectangle to select the label or property.<br>
+<br>
+The color of
+the label / property changes. <br>
+<br>
+Then right-click. You will be prompted to enter the new label text
+or&nbsp; property name and value.<br>
+<br>
+<span style="font-weight: bold;">Special considerations
+for properties:<br>
+<br>
+</span>You
+may also modify property names, values and font sizes by calling up the
+property sheet for the symbol. This is done by right-clicking on the
+symbol canvas <span style="font-style: italic;">when no
+symbol element is selected</span> or by using the <span style="font-style: italic;">Properties &gt;&gt; Show</span>
+menu.<br>
+<br>
+<span style="font-weight: bold;">Note</span> that
+the format for entering a property must be strictly followed:<br>
+&nbsp;<span style="font-family: monospace;">&lt;name&gt;
+&lt;value&gt;</span><br>
+&lt;name&gt; the property name separated by one space from the
+property
+value &lt;value&gt;.<br>
+Each property on a symbol must have a unique
+name.<br>
+You can change the display mode (<span style="font-style: italic;">Value
+Only, All, Nothing</span>) by selecting the appropriate radio
+button. Default is <span style="font-style: italic;">Value
+Only, </span>which displays <span style="font-family: monospace;">&lt;name&gt;
+&lt;value&gt;. </span>If <span style="font-style: italic;">All</span> is selected,<span style="font-family: monospace;"> <br>
+</span><span style="font-family: monospace;">set&lt;x&gt;:&lt;name&gt;
+&lt;value&gt; </span>is displayed.<br>
+If the display mode is set to <span style="font-style: italic;">Nothing</span>,
+it is challenging to select a property for further modification. Use
+the property dialog to change the display mode of a property.<br>
+<br>
+<h3>4.2 <a name="modify_object">
+Modifying
+a Rectangle, Circle, Arc, or Vector</a></h3>
+In order to edit an existing rectangle, circle, arc or vector, select
+it by left-clicking on its "active" area.<br>
+<br>
+Available editing functions for a selected element:<br>
+<ul>
+<li>all elements can be moved by dragging</li>
+<li>&nbsp;rectangles, circles, and arcs can be resized by
+&nbsp;right-clicking, and dragging the drag-squares.</li>
+<li>any corner-point of a vector can be moved by right-clicking
+the
+vector and dragging the corner-point's drag-square.</li>
+</ul>
+<br>
+<br>
+<h3>4.3 <a name="Renaming_a_Port">
+Modifying a Port Name</a></h3>
+Select the port by left-clicking on the text. (Note
+the change of the cursor to a hand, when the mouse is in a position to
+select the item). <br>
+<br>
+You may also draw a selection rectangle to select the port. Select the
+port symbol only, i.e. exclude
+the stem (and optional bulb). <br>
+<br>
+Then right-click to open the rename
+dialog.<br>
+<br>
+<br>
+<br>
+<h2>5. <a name="Deleting_a_Symbol_Element">
+Deleting a Symbol Element</a></h2>
+Select the element by left-clicking within its bounds or draw a
+selection rectangle. Note the color change of the selected element.<br>
+<br>
+Press the DELETE key.<br>
+<br>
+If a property is selected, it can also be deleted using the <span style="font-style: italic;">Properties &gt;&gt;
+Delete</span> menu.<br>
+<br>
+<h2>6. <a name="Fromschematic">Creating a
+Symbol from a Schematic</a></h2>
+If you create a new schematic with the schematic editor, you can
+automatically create the corresponding symbol prototype.<br>
+Select from the main menu &nbsp;<span style="font-style: italic;">Symbol
+&gt;&gt; Create symbol from schematic.<br>
+<br>
+</span>This will open a new symbol tab and produce symbol
+prototype
+with a rectangular symbol shape. All hierarchical connectors of the
+schematic will be displayed as ports and all macros used in the
+schematic will be available as symbol properties.<br>
+<br>
+<h2>7. <a name="ScalingHelp">Scaling Help
+for "Fancy" Symbols</a></h2>
+Drawing of Vectors, Arcs, and Rectangles is tied to the standard grid
+snap.<br>
+<br>
+In
+order to allow drawing of small patterns which make symbols more
+distinct, a scaling facility was added to the symbol editor. Use it as
+follows:<br>
+<br>
+<ul>
+<li>Draw&nbsp;an arbitrary collection of arcs, reactangles
+and circles on the canvas ("the pattern").</li>
+<li>Select the pattern using a selection rectangle (<span style="font-style: italic;">This is <span style="font-weight: bold;">important</span>! Selection
+by clicking does <span style="font-weight: bold;">not</span>
+enable the scaling menu</span>).</li>
+<li><span style="font-style: italic;">Menu
+&gt;&gt; Draw &gt;&gt; Scale selected</span> will
+prompt you for a scale factor.</li>
+<li>The pattern will be scaled and redrawn to the right of the
+original pattern.</li>
+<li>Select the scaled pattern and move it to where you want it
+on the symbol.</li>
+<li>Select and delete the original pattern.</li>
+</ul>
+<span style="font-family: monospace;"></span>
+</body></html>

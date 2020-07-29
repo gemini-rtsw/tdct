@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"  ?>
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+            "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc version="1.0">
+<tocitem text="Help" image="chapter" >
+<tocitem text="Introduction" target="intro" image="topic" />
+<tocitem text="Running Tdct" target="run" image="topic" />
+<tocitem text="Frequently Asked Questions" target="faq" image="topic" />
+<tocitem text="Schematic Editor" target="sched" image="topic" />
+<tocitem text="Symbol Editor" target="symed" image="topic" />
+<tocitem text="Wires and Buses" target="wires" image="topic" />
+<tocitem text="Hierarchy Support" target="hierarchy" image="topic" />
+<tocitem text="Online Mode" target="online" image="topic" />
+<tocitem text="Building EPICS databases" target="database" image="topic" />
+<tocitem text="Reference Section" target="reference" image="topic" />
+<tocitem text="Capfast Compatiblity" target="compat" image="topic" />
+<tocitem text="Diffences to Capfast" target="difference" image="topic" />
+<tocitem text="Configuration File" target="config" image="topic" />
+<tocitem text="Release Notes" target="rnotes" image="topic" />
+</tocitem>
+</toc>
