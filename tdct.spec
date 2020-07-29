@@ -65,6 +65,12 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Jul 28 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.18.2.202007284f1cbf6
+- some restructuring of files and replace tdct-2.17.5 with tdct 2.18.2
+  (fkraemer@gemini.edu)
+- back (fkraemer@gemini.edu)
+- replaces java with headless java (fkraemer@gemini.edu)
+
 * Sun Jul 26 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.17.5.20200726dd2d1ae
 - added some missing Gemini record symbols (kraemer@asmara.leibniz-kis.de)
 
