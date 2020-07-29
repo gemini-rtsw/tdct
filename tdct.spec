@@ -61,6 +61,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %dir /%{_prefix}/%{name}
 /%{_prefix}/%{name}/*
+/gem_base/etc/tdct.*
 
 
 
