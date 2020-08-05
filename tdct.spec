@@ -22,7 +22,7 @@
 Summary: tdct for editing schematics for EPICS
 Name: %{name}
 Version: %{version}
-Release: %{_release}.%(date +"%Y%m%d")%{checkout}%{?dist}
+Release: %{_release}.%(date +"%Y%m%d%H%M")%{checkout}%{?dist}
 License: Proprietary
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
