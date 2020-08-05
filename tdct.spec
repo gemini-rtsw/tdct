@@ -66,6 +66,10 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Aug 05 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.18.2.202008050532cf31419
+- Release tag enriched with hour and minute (%%H%%M) to be able to build
+  several RPMs a day without messing up the repo (fkraemer@gemini.edu)
+
 * Wed Jul 29 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.18.2.20200729b97fd86
 - moved edb.def to the right place (fkraemer@gemini.edu)
 
