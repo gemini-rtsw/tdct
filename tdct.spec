@@ -1,6 +1,5 @@
 %define _prefix /gem_base/epics/extensions/src
 %define gemopt opt
-%define version 3.15.8
 %define name tdct
 %define _release 2.18.2
 %define repository gemdev
@@ -21,8 +20,8 @@
 
 Summary: tdct for editing schematics for EPICS
 Name: %{name}
-Version: %{version}
-Release: %{_release}.%(date +"%Y%m%d%H%M")%{checkout}%{?dist}
+Version: 2.18.2
+Release: 1%{?dist}
 License: Proprietary
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
