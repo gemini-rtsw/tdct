@@ -1,6 +1,5 @@
 %define _prefix /gem_base/epics/extensions/src
 %define gemopt opt
-%define version 3.15.8
 %define name tdct
 %define _release 2.18.2
 %define repository gemdev
@@ -21,8 +20,8 @@
 
 Summary: tdct for editing schematics for EPICS
 Name: %{name}
-Version: %{version}
-Release: %{_release}.%(date +"%Y%m%d%H%M")%{checkout}%{?dist}
+Version: 2.18.2
+Release: 2%{?dist}
 License: Proprietary
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
@@ -66,6 +65,15 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Oct 08 2020 fkraemer <fkraemer@gemini.edu> 2.18.2-2
+- applied new version/release scheme 
+- applied tito configuration for new yum
+  repositories
+
+* Wed Aug 05 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.18.2.202008050532cf31419
+- Release tag enriched with hour and minute (%%H%%M) to be able to build
+  several RPMs a day without messing up the repo (fkraemer@gemini.edu)
+
 * Wed Jul 29 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-2.18.2.20200729b97fd86
 - moved edb.def to the right place (fkraemer@gemini.edu)
 
