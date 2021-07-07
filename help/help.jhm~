@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+   <!DOCTYPE map
+     PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+            "http://java.sun.com/products/javahelp/map_1_0.dtd">
+<map version="1.0">
+   <mapID target="intro" url="html/TdctIntro.html" />
+   <mapID target="run" url="html/TdctRunning.html" />
+   <mapID target="rnotes" url="html/TdctReleaseNotes.html" />
+   <mapID target="faq" url="html/TdctFAQ.html" />
+   <mapID target="sched" url="html/TdctSchematicEditor.html" />
+   <mapID target="symed" url="html/TdctSymbolEditor.html" />
+   <mapID target="config" url="html/TdctConfig.html" />
+   <mapID target="online" url="html/TdctOnline.html" />
+   <mapID target="difference" url="html/TdctCapfast.html" />
+   <mapID target="reference" url="html/TdctReference.html" />
+   <mapID target="wires" url="html/TdctWires.html" />
+   <mapID target="compat" url="html/TdctCompatibility.html" />
+   <mapID target="hierarchy" url="html/TdctHierarchy.html" />
+   <mapID target="database" url="html/TdctDatabase.html" />
+</map>

@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Tdct Comptibility with Capfast</title><meta content="Rolf Keitel" name="author"></head>
+<body>
+<h2><a name="Capfast&#8482;_Compatibility">Capfast<span style="font-weight: bold;">&#8482;</span> Compatibility</a></h2>
+<span style="font-weight: bold; font-style: italic;"></span><a href="#Capfast">C<span style="font-weight: bold;"></span>ompatibility
+mode</a><br>
+<a href="#Dbd_Mode">DBD mode</a><br>
+<a href="#Comparison">Comparison of Modes</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Property_Sheets">Property
+Sheets</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Schematic_File">Schematic
+Files</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#EPICS_Database">EPICS
+Database</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Link_Fields">Link
+Fields</a><br>
+<a href="#Configuration">Configuration</a><br>
+<a href="#Converson">Conversion from Compatibility Mode to
+Dbd Mode</a><br>
+<span style="text-decoration: underline;"></span><br>
+Tdct supports two different modes of operation:<br>
+<ul>
+<li>C<span style="font-weight: bold;"></span>ompatibility
+mode</li>
+<li>Dbd mode</li>
+</ul>
+<h3><a name="Capfast"><span style="font-weight: bold;"></span>Compatibility Mode</a></h3>
+By default, Tdct runs in "C<span style="font-weight: bold;"></span>ompatibility"
+mode. In this mode<br>
+<ul>
+<li>schematics and symbols created by Capfast<span style="font-weight: bold;">&#8482; </span>can be opened.</li>
+<li>the list of EPICS record fields and their default values,
+which
+can be modified by the user, is determined from the EPICS record symbol
+properties.</li>
+<li>the string values for enumerated EPICS record fields of
+type DBF_MENU are obtained from the EPICS dbd files.</li>
+<li>the <a href="TdctEdbDef.html">edb.def file</a> defines</li>
+<ul>
+<li>the mapping of symbol file names onto EPICS record types</li>
+</ul>
+<ul>
+<li>which&nbsp;EPICS record fields are written to the
+database.&nbsp;</li>
+</ul>
+<li>schematics and symbols are saved in Capfast<span style="font-weight: bold;">&#8482;</span> format and are
+fully compatible with Capfast<span style="font-weight: bold;">&#8482;.</span></li>
+<li>schematics, which were created&nbsp; in Dbd mode cannot
+be opened.</li>
+</ul>
+Note that in this mode there is a disconnect between the symbol files
+and edb.def which can lead to strange errors during database
+generation. Symbol files define which record fields can be changed
+interactively. edb.def defines which fields are written to the
+database. Default values on EPICS record symbols override the default
+values in edb.def.
+<h3><a name="Dbd_Mode">Dbd Mode</a></h3>
+In Dbd mode tdct fully parses the EPICS dbd files. In this mode<br>
+<ul>
+<li>schematics and symbols created by Capfast<span style="font-weight: bold;">&#8482; </span>can be opened.</li>
+<li>the
+list of EPICS record fields, which can be
+modified by the user, is determined from the EPICS dbd files.</li>
+<li>default values for the EPICS record fields, which can be
+modified by the user are obtained&nbsp;</li>
+<ul>
+<li>from the EPICS record symbol</li>
+<li>from the EPICS dbd files (if not specified on the symbol)</li>
+</ul>
+<li>the string values for enumerated EPICS record fields of
+type DBF_MENU are obtained from the EPICS dbd files.</li>
+<li>EPICS database generation uses default values for EPICS
+record fields&nbsp;from the EPICS record symbol</li>
+<li>the <a href="TdctEdbDef.html">edb.def file</a> defines the mapping of symbol file names
+to EPICS record types.</li>
+<li>EPICS record fields for which default values are specified
+in the
+dbd files and not on the EPICS record symbol are not &nbsp;written
+to
+the database</li>
+<li>schematics are saved in a <span style="font-weight: bold; font-style: italic;">modified</span>
+Capfast<span style="font-weight: bold;">&#8482;</span>
+format and are not readable by&nbsp;Capfast<span style="font-weight: bold;">&#8482;.</span></li>
+<li>if
+a schematic is loaded which was created in Compatibility mode, a
+warning is issued and the user is prompted for confirmation before the
+schematic is saved.<br>
+</li>
+<li>symbols are saved in Capfast<span style="font-weight: bold;">&#8482;</span> format and are
+fully compatible with Capfast<span style="font-weight: bold;">&#8482;.</span></li>
+</ul>
+<h3><a name="Comparison">Comparison of
+Compatibility Mode and Dbd Mode</a></h3>
+<h4><a name="Property_Sheets">Property
+Sheets</a></h4>
+Example of a property dialogue for a binary input record in
+Compatibilty mode:<br>
+<br>
+<img style="width: 1057px; height: 679px;" alt="property dialog for bi record in compatibility mode" src="CapfastProperties.png"><br>
+<br>
+Example of a property dialogue for a binary input record in Dbd mode:<br>
+<br>
+<img style="width: 997px; height: 647px;" alt="property sheet for bi record in dbd mode" src="DbdProperties.png"><br>
+<br>
+<h4><a name="Schematic_File">Schematic File</a></h4>
+Analog input record on a tdct display and the corresponding section of
+the schematic file in Compatibility mode:<br>
+<br>
+<img style="width: 630px; height: 479px;" alt="tdct display of ai record in compatibility mode" src="CapfastBiCapture.png"><br>
+<br>
+<img style="width: 414px; height: 65px;" alt="ai record in schematic file in compatibility mode" src="CapfastSch.png"><br>
+<br>
+Analog input record on a tdct display and the corresponding section of
+the schematic file in Dbd mode:<br>
+<br>
+<img style="width: 630px; height: 479px;" alt="tdct display of ai record in dbd mode" src="DbdBiCapture.png"><br>
+<br>
+<img style="width: 387px; height: 81px;" alt="ai record in schematic file in dbd mode" src="DbdSch.png"><br>
+<h4><a name="EPICS_Database">EPICS Database</a></h4>
+Comparison of the corresponding sections of EPICS databases in
+Compatibility mode (left) and Dbd mode (right):<br>
+<br>
+<img style="width: 819px; height: 631px;" alt="database comparison" src="DbCompare.png"><br>
+<br>
+<h4 style="font-weight: normal;"><a name="Link_Fields">Link Fields</a></h4>
+Links between EPICS records are established by specifying the target PV
+for an EPICS record link field.<br>
+If&nbsp;a record name, but no field name is given for the
+target PV, the VAL field is targeted. <br>
+In addition, the link properties for passive processing (NPP PP CP CPP
+CA) and severity transfer (NMS MS) can be specified for the link.
+Default is NPP NMS.<br>
+<br>
+<span style="font-weight: bold;">In Compatibility mode</span>,
+&nbsp;<br>
+<br>
+links are specified by<br>
+<ol>
+<li>entering the link target PV name into the def(&lt;link
+field&gt;) property of the EPICS record symbol or&nbsp;</li>
+<li>connecting symbol ports by wires</li>
+</ol>
+link properties are specified by<br>
+<ol start="3">
+<li>adding the properties after the target PV (separated by
+white space) or</li>
+<li>using the pproc(&lt;link field&gt;) and
+palrm(&lt;link field&gt;)
+properties of the EPICS record symbol. If the link is specified with a
+wire, the link properties for passive processing and severity transfer
+can also be specified by double-clicking on the wire-segment which
+connects to the link field.</li>
+</ol>
+NOTE: in the EPICS record symbol set, which came with the Capfast<span style="font-weight: bold;">&#8482;</span><span style="font-weight: bold;"></span><span style="font-weight: bold;"></span>
+distribution, there seem to be some inconsistencies. Not all links have
+the pproc and palrm properties, and on some records the properties do
+not get used properly when a database is built. We don't understand
+this fully and generally work around with 3).<br>
+<br>
+<span style="font-weight: bold;">In Dbd mode,</span><br>
+<br>
+links are specified by<br>
+<ol>
+<li>entering the link target PV name into &lt;link
+field&gt; property of the EPICS record symbol or&nbsp;</li>
+<li>connecting symbol ports by wires</li>
+</ol>
+link properties are specified by<br>
+<ol start="3">
+<li>adding the properties after the target PV (separated by
+white space) or</li>
+<li>if the link is specified with a wire, enter the link
+properties into the &lt;link field&gt; property, preceded by <span style="font-family: monospace;">---,&nbsp;<br>
+</span>e.g.<span style="font-family: monospace;">
+--- PP NMS<br></span>or double-click on the wire segment which connects to the link port to open a dialog for modifying the link properties.<span style="font-family: monospace;"></span></li>
+</ol>
+<br>
+<h3><a name="Configuration">Configuration</a></h3>
+Capfast<span style="font-weight: bold;">&#8482;</span>
+compatibility is controlled by a directive in the&nbsp;<a href="TdctConfiguration.html">configuration file</a>,
+which can have the following forms:<br>
+<br>
+<span style="font-family: monospace; font-weight: bold; font-style: italic;">[option]
+dbdmode</span><br>
+<span style="font-family: monospace;">[option] dbdmode
+false<br>
+</span><span style="font-family: monospace;">[option]
+dbdmode true<br>
+</span><br>
+If the directive is not present or present with the value <span style="font-family: monospace;">false</span>, tdct
+operates in C<span style="font-weight: bold;"></span>ompatibility
+mode.<br>
+If the directive is&nbsp;present without value or present with the
+value <span style="font-family: monospace;">true</span>,
+tdct operates in Dbd mode.<br>
+<br>
+<h3><a name="Converson">Conversion from
+Compatibility Mode to Dbd Mode</a></h3>
+<span style="font-style: italic; font-weight: bold;">Note:
+This Conversion is a one-way street. Once a schematic is converted to
+Dbd Mode, tdct cannot convert it back to Compatibility mode.<br>
+<br>
+</span>When
+tdct operates in Dbd mode and reads a schematic which was saved in
+Compatibility mode, the schematic is automatically converted to dbd
+mode. A warning message is issued to the user in order to avoid
+unintended conversion.<br>
+<br>
+The conversion requires that two instances of EPICS record symbol
+libraries are defined in the tdct configuration file:<br>
+<ul>
+<li>the symbol library for Dbd mode is defined with one or more
+[epicslib] directives.</li>
+<li>the symbol library for Compatibility mode is defined with
+one or more [epicslib_compat] directives.</li>
+<li>both directives may point to the same EPICS record symbol
+library.</li>
+</ul>
+As
+Dbd mode obtains the default values for EPICS record fields from the
+dbd files, EPICS record symbols for dbd mode do not need to define any
+properties with the exception of the "type" property which is used to
+display the record type.<br>
+<br>
+During the conversion of a schematic from Compatibility mode to Dbd
+mode handles record properties in the following way:<br>
+<ul>
+<li>If the record has an instance property in Compatibility
+mode, it will be retained as an instance property in Dbd mode.</li>
+<li>If
+&nbsp;a symbol from the Compatibility mode EPICS library defines a
+property for an EPICS record field and the property value is different
+from the default value of the the dbd file, the property will be added
+as an instance property to any record instance in the Dbd mode
+schematic.</li>
+<li>default instance properties (such as def(INP),
+def(pproc), ...) in Compatibility mode are converted to values of the
+corresponding fields in Dbd mode.</li>
+</ul>
+This assures that the functionality of EPICS databases does not change
+when tdct schematics are converted to Dbd mode.<span style="font-style: italic; font-weight: bold;"></span><br>
+<span style="font-family: monospace;"></span>
+</body></html>

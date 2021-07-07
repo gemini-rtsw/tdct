@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Wires, Buses, etc. in Tdct</title><meta content="Rolf Keitel" name="author"></head>
+<body>
+<h2><a name="Wires_Buses_etc.">Wires,
+Buses, etc.</a></h2>
+<a href="#Disclaimer">Disclaimer</a><br>
+<a href="#Bundles">Bundles</a><br>
+<a href="#Wires_and_EPICS_Record_Links">Wires and EPICS
+Record Links<br>
+</a><a href="#Wires_and_EPICS_Record_Links">Wire
+Types</a><br>
+<a href="#Drawing_Wires">Drawing Wires</a><br>
+<a href="#Editing_Wires">Editing Wires</a><br>
+<a href="#Wire_Consistency">Wire Consistency</a><br>
+<a href="#Bus_Names_and_Bus-Wire_Names">Bus Names and
+Bus-Wire Names</a><br>
+<br>
+<h3><a name="Disclaimer"></a>Disclaimer</h3>
+<br>
+In Capfast<span style="font-weight: bold;">&#8482;</span>
+compatibility
+mode, tdct attempts to be "fully compatible" with&nbsp;Capfast<span style="font-weight: bold;">&#8482;.<br>
+</span>Fully compatible means, that a one can work on a
+schematics or a
+symbol with both Capfast<span style="font-weight: bold;">&#8482;
+</span>and
+tdct without any problems. <br>
+This does, however, not mean, that a schematic saved by&nbsp;Capfast<span style="font-weight: bold;">&#8482;</span>, then read and
+saved by tdct
+are identical. <br>
+Tdct implements some changes in how wire-numbers and wire-IDs are
+treated.<br>
+<br>
+<h3><a name="Bundles">Bundles</a></h3>
+<br>
+Tdct does not support Capfast<span style="font-weight: bold;">&#8482;
+</span>bundles, which were a drawing convenience. When reading a
+Capfast<span style="font-weight: bold;">&#8482; </span>schematic
+containing bundles, tdct replaces the wires drawn into and from the
+bundle with single wire-networks.<br>
+<br>
+<h3><a name="Wires_and_EPICS_Record_Links">Wires
+and EPICS Record
+Links</a></h3>
+<br>
+Wires are used to ultimately establish links between EPICS record
+fields.&nbsp;Each record link originates at a record link field and
+ends at a non-link field at the other end of the wire. The non-link
+field must be uniquely identifiable, i.e. there must be only one link
+from a given link field to a given non-link field. Note that multiple
+links may end at the same non-link field.<br>
+A record link is drawn as a set of connected wires which makes a
+connection between one port each on two different EPICS record
+symbols.&nbsp;In the simplest case the set consists of just one
+wire.
+The ports on the EPICS record symbol have the same name as the
+corresponding record field.<br>
+<br>
+As part of the tdct hierarchy support, two wires of a connected set can
+be located on different schematics. They connect "up"
+through a hierachical connector or "down" through a symbol port of a
+user-defined symbol. <br>
+For drawing convenience, two wires of a connected set can be connected
+on the same schematic with&nbsp;junctions or through an
+intermediary
+"bus". Note that the bus can traverse different levels of hierarchy.<br>
+<br>
+NOTE: EPICS records symbols use by convention a port named SLNK as the
+end of a forward link. This is documented in the IOC Application
+Developer's guide of EPICS releases 3.13 and before.<br>
+&nbsp;<br>
+<h3><a name="Wire_Types"><span style="font-weight: bold;">Wire Types</span></a></h3>
+<br>
+Tdct allows the drawing of three wire types:<br>
+<br>
+<table style="text-align: left; width: 456px; height: 132px;" border="0" cellpadding="4" cellspacing="2">
+<tbody>
+<tr>
+<th></th>
+<th>Wire Type</th>
+<th>Menu</th>
+<th>short-cut key</th>
+</tr>
+<tr>
+<td>1</td>
+<td>plain wire</td>
+<td><span style="font-style: italic;">Symbol
+&gt;&gt; New Wire</span></td>
+<td>W</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bus</td>
+<td><span style="font-style: italic;">Symbol
+&gt;&gt; New Bus</span></td>
+<td>B</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bus-wire</td>
+<td><span style="font-style: italic;">Symbol
+&gt;&gt; New Bus Wire</span></td>
+<td>U</td>
+</tr>
+</tbody>
+</table>
+<br>
+<a href="#Wires_Buses_etc."><span style="font-style: italic;"></span></a><br>
+<h3><a name="Drawing_Wires">Drawing Wires</a></h3>
+Tdct forces wires to be drawn as a sequence of orthogonal segments.<br>
+In order to draw any wire<br>
+<ol>
+<li>enter wire-draw mode from the menu or via a short-cut key.</li>
+<li>move the mouse to the desired wire start location and
+left-click
+to position the first point</li>
+<li>move the mouse to the next position &nbsp; (don't drag,
+i.e.
+don't hold down any key)</li>
+<li>left-click to position the next point</li>
+<li>right-click to finish the wire (at least two points must be
+positioned for a valid wire).</li>
+</ol>
+If &nbsp;the present mouse position would allow a wire to connect
+with
+a symbol port or another wire, the default (arrow) mouse pointer
+changes to a
+pointing hand.<br>
+If an end of a finished wire is unconnected, a red circle is drawn
+around the end (only for wires, not for buses).<br>
+<br>
+<a href="TdctWires.html#Wires_Buses_etc."><span style="font-style: italic;">top</span></a><br>
+<br>
+<span style="font-weight: bold;">Plain Wires</span>
+<ul>
+<li>plain wires are automatically numbered
+by tdct, when a schematics is saved.<br>
+This was implemented because of issues with Capfast<span style="font-weight: bold;">&#8482; </span>which led in
+certain
+circumstances to incorrect EPICS databases.</li>
+<li>plain wires cannot have user-assigned names.</li>
+</ul>
+<span style="font-weight: bold;">Buses<br>
+<br>
+</span>&nbsp;Once a bus is finished, Tdct prompts for a bus
+name. A
+valid bus name has the format<br>
+<br>
+<span class=""><span style="font-family: monospace;">&lt;name&gt;[&lt;range&gt;]</span><br>
+<br>
+where <br>
+&nbsp;&nbsp;&nbsp; <span style="font-family: monospace;">&lt;name&gt;&nbsp;
+</span>&nbsp;can be any combination of letters, digits, and
+underscores.<br>
+&nbsp;&nbsp;&nbsp; <span style="font-family: monospace;">&lt;range&gt;
+&nbsp;</span>consists of two integer&nbsp; numbers
+separated by a dash
+or colon.<br>
+&nbsp;&nbsp;&nbsp; No white space is allowed int the bus
+name.<br>
+&nbsp;&nbsp;&nbsp; Note that the square brackets are part
+of the syntax.<br>
+<br>
+Example: &nbsp;myBus[0-5]<br>
+<br>
+<span style="font-weight: bold;">Bus Wires</span><br>
+<br>
+Bus wires are drawn from a symbol port to a point on a vertical bus
+segment. <br>
+Tdct automatically attaches the bus wire to the bus with a
+bustap symbol.<br>
+</span>Once a bus wire is finished, Tdct prompts for a bus wire
+name. A
+valid bus wire name has the format<br>
+<br>
+<span class=""><span style="font-family: monospace;">&lt;name&gt;[&lt;wire
+index&gt;</span>]<br>
+<br>
+where <br>
+&nbsp;&nbsp;&nbsp; <span style="font-family: monospace;">&lt;name&gt;
+&nbsp;&nbsp;</span> is the name of the bus the bus wire
+connects to.<br>
+&nbsp;&nbsp;&nbsp; <span style="font-family: monospace;">&lt;wire
+index&gt;</span>
+&nbsp; is an integer&nbsp; number which must fall within the
+bus range<br>
+&nbsp;&nbsp;&nbsp; No white space is allowed int the bus
+wire name.<br>
+&nbsp;&nbsp;&nbsp; Note that the square brackets are part
+of the syntax.<br>
+<br>
+Tdct suggests to use the same bus-wire name as the bus name, but the
+user can override it.<br>
+When building EPICS databases, tdct uses only the wire index when
+connecting wires through a bus.<br>
+<br>
+Example: &nbsp;WIRE[3]<br>
+</span><br>
+<a href="TdctWires.html#Wires_Buses_etc."><span style="font-style: italic;">top</span></a><br>
+<h3><a name="Editing_Wires">Editing Wires</a></h3>
+Once a wire is selected,
+wire-edit mode is
+toggled on/off by right-clicking.<br>
+<br>
+<span style="font-weight: bold;">Re-routing a Wire</span><br>
+<ol>
+<li>select a wire by left-clicking</li>
+<li>right-click to enter edit mode. Green drag-boxes will
+appear
+around each wire segment endpoint</li>
+<li>position the mouse pointer inside one of the drag-boxes and
+left-press. If the mouse was positioned inside a drag-box, the box will
+change colour to red.</li>
+<li>drag the wire point to the desired location. If the point
+is a
+wire end-point and the point location allows connecting of the wire to
+a symbol port or to another wire, the default&nbsp;(arrow) mouse
+pointer changes to a pointing hand.</li>
+<li>release the mouse button.</li>
+</ol>
+<span style="font-weight: bold;">Adding Segments to a Wire</span><br>
+<br>
+In wire-edit mode, a wire can be extended with an orthogonal segment<br>
+<ul>
+<li>at the beginning of the wire with shift-left-click</li>
+<li>at the end of the wire with shift-right click</li>
+</ul>
+If a wire is connected to a port or another wire, the connected end
+cannot be extended.<br>
+<br>
+<br>
+<span style="font-weight: bold;">Removing Segments from a
+Wire</span><br>
+<br>
+In wire-edit mode, a&nbsp;wire-segment can be removed&nbsp;<br>
+<ul>
+<li>from the beginning of the wire with alt-left-click</li>
+<li>from&nbsp;the end of the wire with alt-right click</li>
+</ul>
+If a wire is connected to a port or another wire, the connected end
+cannot be removed.<br>
+<br>
+<br>
+<span style="font-weight: bold;">Re-naming a Wire</span><br>
+This function is available for buses and bus-wires only.<br>
+<ol>
+<li>select a wire by left-clicking</li>
+<li>use the R short-cut key to open the rename dialog</li>
+</ol>
+Renaming is possible both with wire-edit mode on or off.<br>
+<br>
+<a href="TdctWires.html#Wires_Buses_etc."><span style="font-style: italic;">top</span></a><br>
+<br>
+<span style="font-weight: bold;"></span><br>
+<br>
+<br>
+<h3><a name="Wire_Consistency">Wire
+Consistency</a></h3>
+For wires in a schematic, tdct and&nbsp;Capfast<span style="font-weight: bold;"></span><span style="font-weight: bold;">&#8482;
+</span>keep track of wire connections with a connection string
+for each
+of the two wire ends. If a wire end connects to a symbol port, the
+connection string contains the symbol type, the name of the symbol and
+the symbol port it is connected to. <br>
+If the symbol is modified after the schematic has been drawn
+inconsistencies can creep in if the port connected to the wire is
+renamed, deleted or moved.<br>
+<br>
+This situation is recognized by tdct, when a schematic is loaded. The
+user is warned, receives a list of wires with problems and has two
+choices:<br>
+<ol>
+<li>to redraw the inconsistent wires</li>
+<li>let tdct auto-fix the inconsistencies.</li>
+</ol>
+If wire inconsistencies are detected during batch-building of
+databases, a warning message is printed.<br>
+<br>
+<br>
+<span style="font-weight: bold;">Auto-fix Dangers</span><br>
+Auto-fix checks for each wire on the schematic , which connects to a
+symbol port, if the port at the location of the wire end matches with
+the connection string attached to the wire. If not, the connection
+string is updated based on what is found at the end-point location.<br>
+In certain circumstances, auto-fix &nbsp;will create potentially
+undesired effects:<br>
+<ul>
+<li>if the symbol has been modified by moving ports, so that a
+new
+port is located where the wire was connected. In this case auto-fix
+will connect the wire to the new port.&nbsp;</li>
+</ul>
+Auto-fix presents you with a list of all the wire end changes it made
+and asks you to review them.<br>
+<br>
+&nbsp;<a href="TdctWires.html#Wires_Buses_etc."><span style="font-style: italic;">top</span></a><br>
+<br>
+<h3><a name="Bus_Names_and_Bus-Wire_Names">Bus
+Names and Bus-Wire Names</a></h3>
+When following bus-wires, tdct tries to cope with the fact that
+different versions of Capfast and different versions of the EPICS
+database generator e2db exhibit different behaviour.
+<p> Older schematics obtained from Keck ("old-style") have
+bus-wires connect to one end of a bus-tap, but the other end of the
+bus-tap is not connected to anything, it is just located on top of the
+bus.<br>
+Newer schematics ("new-style") have bus-wires connect to one end of a
+bus-tap and the other end of the bus-tap is connected to a bus-segment.</p>
+<p>When drawing bus-wires, tdct implements the new-style
+behaviour with zero- length bus segments. </p>
+<p> When a bus ascends from a schematic to a higher hierarchy
+level (i.e. the bus connects to a hierarchy connector ) or descends
+from a schematic to a lower hierarchy level (i.e. connects to a symbol
+port) the bus name can be different on different hierarchy levels. </p>
+<p> When tdct follows a bus-wire from an EPICS record link field,
+it first tries to find a matching bus wire on the same schematic.
+Matching is done in two steps:<br>
+</p>
+<ol>
+<li> any bus-wire with the same wire id is a match.<br>
+This works on both old-style and new-style schematics.</li>
+<li>from the bus-tap connecting the bus-wire to a bus-segment,
+the bus-name is obtained and any bus-wire with the same name and index
+as the followed bus-wire connected to the same bus is a match.<br>
+This works only on new-style schematics. </li>
+</ol>
+In other words:<br>
+On old-style schematics, bus-wires must have the same name as the bus.<br>
+On new-style schematics, bus-wires may have different names from the
+bus.
+<br>
+<br>
+<br>
+</body></html>

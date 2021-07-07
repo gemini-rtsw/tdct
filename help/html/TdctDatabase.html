@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Building EPICS Databases with Tdct</title>
+
+<meta content="Rolf Keitel" name="author">
+</head>
+<body>
+<h2><a name="Building_EPICS_Databases">Building
+EPICS Databases</a></h2>
+<a href="#Note_on_Macro_Substitution"><br>
+Macro Substitution during EPICS database generation</a><br>
+<a href="#Unresolved_Macros">Unresolved Macros During
+Database Building</a><br><a href="#Link_Properties_and_EPICS_Database">Link Properties and EPICS Database Generation</a><br>
+<a href="#Batch_Mode">Batch Mode</a><br>
+<a href="#Interactive_Mode">Interactive Mode</a><br>
+<a href="#Schematic_Checks">Schematic Checks</a><br>
+<br>
+Tdct&nbsp;can build EPICS databases both in interactive and in
+batch mode.<br>
+<br>
+<h3><a name="Note_on_Macro_Substitution">Macro
+Substitution during EPICS database generation</a></h3>
+Macro substitution is governed by the configuration option <span style="font-family: monospace;">immediate_macro_use</span>.<br>
+This
+option was implemented to give users more control over macro
+substitution on symbol instance properties during database building.<br>
+By
+default this option is set to true. This retains the traditional tdct
+behaviour which was implemented for backward compatibility with Capfast<span style="font-weight: bold;">&#8482;</span>
+use at Gemini.<br>
+<span style="font-style: italic; font-weight: bold;">It is
+recommended to set this option to </span><span style="font-family: monospace; font-style: italic; font-weight: bold;">false</span><span style="font-style: italic; font-weight: bold;"> to avoid
+unexpected side-effects.<br>
+<br>
+</span>If the option is set to <span style="font-family: monospace;">true</span>&nbsp;
+and&nbsp; a macro value is redefined on a symbol
+instance,&nbsp;the redefined value of the macro is <span style="font-weight: bold;">immediately</span> used for
+resolution of further symbol instance properties.<br>
+If the option is set to&nbsp;<span style="font-family: monospace;">false</span> and
+a&nbsp; macro value is redefined on a symbol instance,
+&nbsp;the redefined value of the macro is <span style="font-weight: bold;">not</span> used for
+resolution of other symbol instance properties.<br>
+In both cases the redefined macro value is used in resolving macros in
+the daughter schematic of the symbol instance.<br>
+<br>
+Example:<br>
+An EPICS database is built flattening a hierarchy of schematics.<br>
+At
+the top level the macro M2 is assigned a value 'PUMP1' and during
+processing a schematic tdct encounters a symbol instance which defines
+three properties:<br>
+M1 $(M2):ON<br>
+M2 PUMP2<br>
+M3 $(M2):OFF<br>
+<br>
+The second property redefines the value of M2. <br>
+When the daughter schematic is processed the macros have the following
+values:<br>
+<br>
+case a: &nbsp;[options] immediate_macro_use&nbsp; false<br>
+M1 PUMP1:ON<br>
+M2 PUMP2<br>
+M3 PUMP1:OFF<br>
+<br>
+case b: &nbsp;[options] immediate_macro_use&nbsp; true<br>
+In
+this case, the macro values depend on the sequence of the properties in
+the symbol file which depends on how the symbol was designed.<br>
+Note that this is not necessarily the order in which&nbsp;the
+properties are shown on the symbol.<br>
+If the macro sequence in the symbol file is M1 M2 M3:<br>
+M1 PUMP1:ON<br>
+M2 PUMP2<br>
+M3 PUMP2:OFF<br>
+If the macro sequence in the symbol file is M1 M3 M2:<br>
+M1 PUMP1:ON<br>
+M2 PUMP2<br>
+M3 PUMP1:OFF<br>
+If the macro sequence&nbsp;in the symbol file is M2 M1 M3:<br>
+<span style="font-style: italic; font-weight: bold;"></span><span style="font-style: italic; font-weight: bold;"></span>M1
+PUMP2:ON<br>
+M2 PUMP2<br>
+M3 PUMP2:OFF<br>
+<br>
+<h3><a name="Unresolved_Macros">Unresolved
+Macros During Database Building</a></h3>
+If tdct encounters unresolved macros during database building, warning
+messages are generated.<br>
+<br>
+If
+unresolved macros are used in recursive macro definitions, such as "top
+= $(top)xxxxx", the resulting database may not be what you expect.<br>
+<br>
+There are two ways of resolving this:<br>
+<ul>
+<li>Build a template<br>
+In this case the database will contain the unresolved macros and they
+can be substituted when the IOC loads the database.</li>
+<li>Set the configuration option [option]
+empty_unresolved_macros true<br>
+In this case&nbsp;unresolved macros will be replaced by empty
+strings.</li>
+</ul>
+<br>
+<h3><a name="Link_Properties_and_EPICS_Database"></a>Link Properties and EPICS Database Generation</h3>
+This note applies only to&nbsp;Capfast<span style="font-weight: bold;">&#8482;
+</span>compatibility mode and the link properties for passive
+processing and maximizing severity ("ppms properties").<br>
+In the following <br>
+<ul>
+<li>LINK stands for the link field name, i.e. OUT, INP, etc.</li>
+<li>wire-link denotes a link which is created by drawing a wire
+from the link port of a record to a target (another record or a
+hardware I/O symbol which specifies the link target).</li>
+<li>field-link denotes a link which is defined by a def(LINK)
+property of a record.</li>
+</ul>
+<br>
+.For record links there are several possibilities to specify ppms
+properties:<br>
+<ol>
+<li>using the pproc(LINK)&nbsp; and palrm(LINK) record
+pseudo properties. Default values are NPP and NMS. In this case the
+value of option ppms_wireonly is important.</li>
+<ol>
+<li>if ppms_wireonly is true - this is the default -
+pproc(LINK) and palrm(LINK) affect only wire-links. If the target of
+the wire-link is a hardware I/O symbol which specifies a ppms property
+with the link target, pproc and palrm are ignored.</li>
+<li>if ppms_wireonly is false,&nbsp;pproc(LINK) and
+palrm(LINK) affect both wire-links and field-links. If a field-link
+defines a ppms property, pproc and palarm are ignored.</li>
+</ol>
+<li>specifying the link target with&nbsp;the def(LINK)
+pseudo property, adding non-default ppms properties. Example:
+&nbsp;setting def(OUT) &nbsp;to "&lt;record name&gt; PP
+MS". Note that if a wire is connected to &nbsp;the LINK port of a
+record symbol, the def(LINK) pseudo property is ignored.</li>
+</ol>
+<h3><a name="Batch_Mode">Batch Mode</a></h3>
+The following command line switches can be used for running
+tdct&nbsp;in "no graphics" mode. <br>
+In this mode tdct&nbsp; functions either as an EPICS database
+builder
+only or as a schematic converter from Capfast compatibility mode to dbd
+mode..<br>
+<br>
+<span style="font-family: monospace;">-s &lt;schematic
+name&gt;</span><br>
+If this switch is specified, Tdct runs without graphics and builds the
+schematic into an EPICS runtime database.<br>
+<br>
+<span style="font-family: monospace;">-m &lt;macro
+string&gt;</span><br>
+This switch is only useful, if -s was specified. The macro string is
+parsed and the macro name-value-pairs specified are used in the
+database build process.<br>
+<br>
+<span style="font-family: monospace;">-cfg
+&lt;configuration file path&gt;</span><br>
+&nbsp;Loads configuration file from &lt;configuration file
+path&gt; instead from tdct.cfg in the user's home directory.<br>
+<br>
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">-db &lt;data base
+path&gt;</span><br>
+This switch is only useful, if -s was specified. The generated data
+base is written to <span style="font-family: monospace;">&lt;data
+base path&gt;.</span><br>
+<span style="font-family: monospace;"><br>
+-dbd &lt;dbd file path&gt;</span><br>
+&nbsp;Specifies the dbd file to be used.<br>
+<span style="font-family: monospace;"></span><span style="font-family: monospace;"><br>
+-from &lt;input file path&gt;</span><br>
+&nbsp;Specifies the path of the input directory for batch
+conversion of schematics from Capfast compatibility mode to Dbd mode.<br>
+<span style="font-family: monospace;"></span><br>
+<span style="font-family: monospace;">-i &lt;schematic
+file path&gt;</span><br>
+&nbsp;Specifies a schematic for immediate loading.<br>
+<span style="font-family: monospace;"><br>
+-start &lt;dbd file path&gt;</span><br>
+&nbsp;Specifies the startup directory..<br>
+<span style="font-family: monospace;"><br>
+-todbd &lt;output file path&gt;</span><br>
+&nbsp;Specifies the output file path&nbsp;for batch conversion
+of schematics from Capfast compatibility mode to Dbd mode.<span style="font-family: monospace;"><br>
+<br>
+-z &lt;button no&gt;</span><br>
+&nbsp;If button_no = 2, the left mouse button drags the select
+rectangle and the middle mouse button drags the zoom rectangle.<br>
+<br>
+<span style="font-family: monospace;"></span><br>
+<h3><a name="Interactive_Mode">Interactive
+Mode</a></h3>
+The following menu items from the <span style="font-style: italic;">Menu
+&gt;&gt; Databas</span>e
+menu are available. Depending on whether an EPICS database or a
+database template are built, tdct uses different approaches to macro
+substitutions.<br>
+<h4>Build current canvas</h4>
+The current canvas schematic is used to build an EPICS <span style="font-weight: bold; font-style: italic;">database</span>.
+If during the database build macros are encountered which cannot be
+resolved, the macro definition is <span style="font-weight: bold;">replaced
+with an empty string</span> and a
+warning is raised.
+<h4>Build current canvas with macros</h4>
+The current canvas schematic is used to build an EPICS <span style="font-weight: bold; font-style: italic;">database</span>.
+Tdct prompts the user to supply macros.&nbsp;If during the database
+build macros are encountered which cannot be
+resolved, the macro definition is <span style="font-weight: bold;">replaced
+with an empty string</span> and a
+warning is raised.
+<h4>Build current canvas as template</h4>
+The current canvas schematic is used to build an EPICS <span style="font-weight: bold; font-style: italic;">database
+template</span>. If during the database build macros
+are encountered which cannot be
+resolved, the macro definition is <span style="font-weight: bold;">retained</span>.
+If a macro definition contains an = &nbsp;(equal sign), no
+substitutions are made, i.e. the macro definition is <span style="font-weight: bold;">retained</span>.<br>
+<h4>Build multiple</h4>
+Tdct presents a file open dialog, where multiple schematics can be
+selected. Each schematic is build into an EPICS <span style="font-weight: bold; font-style: italic;">database</span>.
+<h4>Build all</h4>
+Tdct builds all schematics of the current directory into EPICS <span style="font-weight: bold; font-style: italic;">databases</span>.
+One schematic must be opened to define the current directory.<br>
+<br>
+<br>
+<h3><a name="Schematic_Checks">Schematic
+Checks</a></h3>
+<span style="font-weight: bold;"></span>During
+database building, tdct checks the schematic hierarchy for duplicate
+records and for record links which have wire-connections to other
+record links. When errors are found, they are reported, but the
+database is built nevertheless. <br>
+<br>
+Link fields which target another link field via a wire are set to
+constant 0.<br>
+<br>
+<br>
+</body></html>
