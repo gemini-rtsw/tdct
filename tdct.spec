@@ -81,9 +81,6 @@ rm -rf %{buildroot}
 - Added files from latest release 2.18.4
 - Renamed folder with latest version number
 
-* Thu Apr 15 2021 Felix Kraemer <fkraemer@gemini.edu> 2.18.2-5
-- removed epics-base-devel dependency
-
 * Thu Oct 08 2020 fkraemer <fkraemer@gemini.edu> 2.18.2-2
 - applied new version/release scheme 
 - applied tito configuration for new yum
