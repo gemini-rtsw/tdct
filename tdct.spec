@@ -19,8 +19,8 @@
 
 Summary: tdct for editing schematics for EPICS
 Name: %{name}
-Version: 2.18.4
-Release: 4%{?dist}
+Version: 2.18.6
+Release: 1%{?dist}
 License: Proprietary
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
@@ -64,6 +64,15 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Aug 25 2021 ignacio arriagada <ignacio.arriagada@noirlab.edu> 2.18.6-1
+- Changed spec file to have the right dependencies
+- Changed spec files to use version properly
+- Added new files of version 2.18.6 and removed old ones
+- deleted unnecessary files and directories
+- Included new changes in main dir
+- Added files from latest release 2.18.4
+- Renamed folder with latest version number
+
 * Tue Aug 03 2021 Felix Kraemer <fkraemer@gemini.edu> 2.18.4-4
 - initialized CI scripts
 
