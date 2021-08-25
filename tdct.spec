@@ -19,15 +19,15 @@
 
 Summary: tdct for editing schematics for EPICS
 Name: %{name}
-Version: 2.18.2
-Release: 2%{?dist}
+Version: 2.18.4
+Release: 4%{?dist}
 License: Proprietary
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
 ExclusiveArch: %{arch}
 Prefix: %{_prefix}
-BuildRequires: epics-base-devel java-1.8.0-openjdk
-Requires: epics-base-devel java-1.8.0-openjdk
+BuildRequires: java-1.8.0-openjdk
+Requires: java-1.8.0-openjdk
 
 
 %description
@@ -42,7 +42,7 @@ EPICS is a set of Open Source software tools, Vlibraries and applications develo
 mkdir -p %{buildroot}/%{_prefix}
 mkdir -p %{buildroot}/gem_base/etc
 
-cp -r %{name}_dist-%{version} %{buildroot}/%{_prefix}/%{name}
+cp -r %{name}_dist-%{version}/%{_prefix}/%{name}
 cp -r sym %{buildroot}/%{_prefix}/%{name}/
 cp -r library %{buildroot}/%{_prefix}/%{name}/
 cp etc/tdct.* %{buildroot}/gem_base/etc/
@@ -64,6 +64,17 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Aug 03 2021 Felix Kraemer <fkraemer@gemini.edu> 2.18.4-4
+- initialized CI scripts
+
+* Tue Jul 27 2021 Ignacio Arriagada <iarriagada@gemini.edu>
+- Included new changes in main dir
+- Added files from latest release 2.18.4
+- Renamed folder with latest version number
+
+* Thu Apr 15 2021 Felix Kraemer <fkraemer@gemini.edu> 2.18.2-5
+- removed epics-base-devel dependency
+
 * Thu Oct 08 2020 fkraemer <fkraemer@gemini.edu> 2.18.2-2
 - applied new version/release scheme 
 - applied tito configuration for new yum
