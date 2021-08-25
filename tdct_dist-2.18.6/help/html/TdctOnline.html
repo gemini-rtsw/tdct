@@ -2,11 +2,11 @@
 <html><head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Tdct Online Mode</title><meta content="Rolf Keitel" name="author"></head>
 <body>
-<h2><a name="Tdct_Online_Mode">Tdct Online
+<h2><a name="Tdct_Online_Mode">Tdct On-line
 Mode</a></h2>
 <span style="font-family: monospace;"></span><a href="#Display_of_EPICS_PVs">Display of EPICS PVs</a><br>
 <a href="#Writing_to_EPICS_PVs">Writing to EPICS PVs</a><br>
-<a href="#EPICS_Environment">EPICS Environment</a><br>
+<a href="#EPICS_Environment">EPICS Environment</a><br><br>Disclaimer: tdct on-line mode is an experimental feature. It It is meant to help the developer with testing of schematics. <br>
 <br>
 Tdct can connect to EPICS IOCs and display online data for EPICS PVs.
 If configured, it can also modify PVs in an IOC.<br>
@@ -32,7 +32,7 @@ of EPICS PVs</a></h4>
 In on-line mode, EPICS PVs are displayed the following way:<br>
 <ul>
 <li>for each EPICS record, the <span style="font-family: monospace;">VAL</span> field is
-displayed. It is colour-coded based on the records <span style="font-family: monospace;">SEVR</span> field.
+displayed and updated as the value changes in the IOC.<br><br> It is colour-coded based on the records <span style="font-family: monospace;">SEVR</span> field.
 Default colour mapping is</li>
 <ul>
 <li style="font-family: monospace;">NO_ALARM =&gt;
@@ -43,17 +43,16 @@ yellow</li>
 <li><span style="font-family: monospace;">INVALID
 =&gt; white<br>
 </span>Different colours may be defined through the <span style="font-family: monospace;">[color]</span>
-directive in the configuration file.<br>
-</li>
-</ul>
-<li>If other EPICS record fields are displayed on the
-schematics, their online value is displayed.<br>
+directive in the configuration file.<br></li>
+</ul><li>For&nbsp; other EPICS record fields which are displayed on the
+schematics, tdct connects to the PVs&nbsp;only when&nbsp;&nbsp;the
+online property sheet for the record is opened at the proper interest
+level.<br>In this case the on-line value of the PV is displayed, otherwise "xxx" is displayed.<br>
 If the online value is different from the value configured on the
 schematics (i.e. if the value was modified via Channel Access, dbpf, or
 by tdct), the value background is displayed in dark gray. This
 background color can be defined by a <span style="font-family: monospace;">[color] </span>directive
-in the configuration file.<br>
-<br>
+in the configuration file.<br><br>
 </li>
 <li>If a property sheet is called up for an EPICS record, the
 field values are read from the EPICS IOC in the "value" column. <br>
