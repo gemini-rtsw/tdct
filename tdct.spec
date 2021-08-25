@@ -42,7 +42,7 @@ EPICS is a set of Open Source software tools, Vlibraries and applications develo
 mkdir -p %{buildroot}/%{_prefix}
 mkdir -p %{buildroot}/gem_base/etc
 
-cp -r %{name}_dist-%{version}/%{_prefix}/%{name}
+cp -r %{name}_dist-%{version} %{buildroot}/%{_prefix}/%{name}
 cp -r sym %{buildroot}/%{_prefix}/%{name}/
 cp -r library %{buildroot}/%{_prefix}/%{name}/
 cp etc/tdct.* %{buildroot}/gem_base/etc/
