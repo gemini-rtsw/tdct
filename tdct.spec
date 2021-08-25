@@ -1,7 +1,6 @@
 %define _prefix /gem_base/epics/extensions/src
 %define gemopt opt
 %define name tdct
-%define _release 2.18.2
 %define repository gemdev
 %define debug_package %{nil}
 %define arch %(uname -m)
@@ -43,7 +42,7 @@ EPICS is a set of Open Source software tools, Vlibraries and applications develo
 mkdir -p %{buildroot}/%{_prefix}
 mkdir -p %{buildroot}/gem_base/etc
 
-cp -r %{name}_dist-%{_release} %{buildroot}/%{_prefix}/%{name}
+cp -r %{name}_dist-%{version} %{buildroot}/%{_prefix}/%{name}
 cp -r sym %{buildroot}/%{_prefix}/%{name}/
 cp -r library %{buildroot}/%{_prefix}/%{name}/
 cp etc/tdct.* %{buildroot}/gem_base/etc/
