@@ -20,7 +20,7 @@
 Summary: tdct for editing schematics for EPICS
 Name: %{name}
 Version: 2.18.6
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: Proprietary
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
@@ -64,6 +64,56 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Nov 17 2021 Hawi Stecher <hstecher@gemini.edu> 2.18.6-2
+- Update to gem-ci
+- changed gem-ci to branch testing/2021q4
+- Updated gem-ci
+- updated gem-ci back to master
+- updated gem-ci submodule for some fixes
+- updated gem-ci submodule for applying maturity level transitions to all
+  layers
+- updated gem-ci submodule for fixing maturity on rebuild
+- updated gem-ci submodule for streamlined gitlab-ci jobs
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule for correct container rebuild
+- updated gem-ci submodule to use correct BASE_CONTAINER
+- updated gem-ci submodule to its newest version for triggering container
+  rebuild
+- updated submodule to newest version for a small fix
+- updated submodule to newest version for using API for triggering
+- updated submodule to newest version for a small fix
+- updated submodule to newest version for first tries rebuilding the container
+  after rpm installation
+- updated submodule to newest version for hopefully fixing triggering
+- updated submodule to newest version for hopefully fixing triggering
+- updated submodule to newest version for hopefully fixing triggering
+- updated submodule to newest version for hopefully fixing triggering
+- updated submodule to newest version for hopefully fixing triggering
+- updated submodule to newest version for hopefully fixing triggering
+- updated submodule to newest version for hopefully fixing triggering
+- updated submodule to newest version for hopefully fixing triggering
+- updated submodule to newest version for bugfix
+- updated module gem-ci to branch target-repo-handling for testing maturity
+  transitions
+- changed version number in spec file
+- Fixed typo on esels.sym, Related to #5
+- changed BASE_CONTAINER to registry.gitlab.com/nsf-
+  noirlab/gemini/rtsw/common/gemini-ade/stable/release-2021q4:latest
+- updated gem-ci submodule to newest version
+- Updated with call to gem-init-project.sh with softtcs_mk unstable container
+- Fixed missing buildroot in spec file
+
 * Wed Aug 25 2021 ignacio arriagada <ignacio.arriagada@noirlab.edu> 2.18.6-1
 - Changed spec file to have the right dependencies
 - Changed spec files to use version properly
