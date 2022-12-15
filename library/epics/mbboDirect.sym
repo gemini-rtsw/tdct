@@ -76,6 +76,7 @@ p 112 196 100 0 0 typ(SIML):path
 p 112 228 100 0 0 def(SIML):0.000000000000000e+00
 p 112 292 100 0 0 typ(SIOL):path
 p 112 260 100 0 0 def(SIOL):0.000000000000000e+00
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 256 352

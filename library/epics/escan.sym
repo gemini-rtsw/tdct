@@ -309,6 +309,7 @@ p 744 -568 100 0 -1 username(U8):FLD8
 p 744 -600 100 0 -1 username(U9):FLD9
 p 744 -632 100 0 -1 username(UA):FLDA
 p 744 -664 100 0 -1 username(UB):FLDB
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 l 75 0 0 256 -472 Detectors

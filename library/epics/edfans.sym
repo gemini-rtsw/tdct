@@ -87,6 +87,7 @@ p 1572 -2948 100 0 0 typ(OUTF):path
 p 1592 -2968 100 0 0 typ(OUTG):path
 p 1612 -2988 100 0 0 typ(OUTH):path
 p 352 -672 100 0 0 typ(SDIS):path
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 800 640

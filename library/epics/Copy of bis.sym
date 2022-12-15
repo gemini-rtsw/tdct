@@ -25,6 +25,7 @@ p 96 -82 100 0 0 def(FLNK):0.000000
 p 96 -100 100 0 0 typ(FLNK):path
 p 96 -132 100 0 0 typ(INP):val
 p 96 -164 100 0 0 def(INP):#C0 B0
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 0 176

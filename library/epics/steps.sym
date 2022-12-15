@@ -57,6 +57,7 @@ p 161 -189 100 0 0 typ(OUT):val
 p 96 -2 100 0 0 PREC:0
 p 161 -221 100 0 0 HLSV:NO ALARM
 p 39 358 100 0 -1 username(U0):FLD0
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 r 0 -160 320 32 512

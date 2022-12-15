@@ -146,6 +146,7 @@ p 96 -132 100 0 0 typ(BTCH):val
 p 96 -164 100 0 0 def(BTCH):0.000000000000000e+00
 p 96 -228 100 0 0 pproc(BTCH):NPP
 p 96 -228 100 0 0 palrm(BTCH):NMS 
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 r 0 32 544 544 -224

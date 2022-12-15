@@ -81,6 +81,7 @@ p 272 446 100 0 0 primitive:mbbi
 p 161 -186 100 0 0 typ(FLNK):path
 p 161 -189 100 0 0 typ(INP):val
 p 161 -191 100 0 0 typ(SDIS):path
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 384 240

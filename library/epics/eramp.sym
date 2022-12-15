@@ -100,6 +100,7 @@ p 256 -482 100 0 0 pproc(PDNL):NPP
 p -32 -354 100 0 1 RMOD:Closed Loop
 p 256 -162 100 0 1 MDLT:0
 p -32 -386 100 0 1 PDNV:1
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 r 0 -64 -416 544 416

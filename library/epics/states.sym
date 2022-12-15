@@ -7,6 +7,7 @@ p 160 446 100 0 0 primitive:state
 p 164 102 100 0 -1 Type:state
 p 96 382 100 0 0 Node:nodename
 p 96 318 100 0 0 DESC:state record
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 a 0 192 160 204 190 360

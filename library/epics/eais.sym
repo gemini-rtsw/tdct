@@ -52,6 +52,7 @@ p 96 -228 100 0 0 ASG:
 p 96 -228 100 0 0 typ(SDIS):path
 p 96 -228 100 0 0 pproc(SDIS):NPP
 p 96 -228 100 0 0 palrm(SDIS):NMS
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 416 416

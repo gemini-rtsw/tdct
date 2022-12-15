@@ -55,6 +55,7 @@ p 96 -2 100 0 0 EGU:units
 p 161 -187 100 0 0 def(FLNK):0.000000
 p 161 -186 100 0 0 typ(FLNK):path
 p 161 -219 100 0 0 PREC:0
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 -32 128

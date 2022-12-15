@@ -47,6 +47,7 @@ p 96 -272 100 0 0 typ(U0):val
 p 96 -304 100 0 0 typ(U1):val
 p 96 -336 100 0 0 typ(U2):val
 p 96 -368 100 0 0 typ(U3):val
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 384 416

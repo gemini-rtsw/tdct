@@ -51,6 +51,7 @@ p 96 -228 100 0 0 palrm(SDIS):NMS
 p 96 -324 100 0 0 def(OUT):#C0 S0
 p 96 -358 100 0 0 typ(OUT):val
 p 552 164 100 0 -1 username(U0):FLD0
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 a 0 480 224 480 272 360

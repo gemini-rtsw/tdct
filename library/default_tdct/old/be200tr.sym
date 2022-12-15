@@ -15,6 +15,7 @@ p 5369 189 300 0 -1 setr:A
 p 5440 512 250 0 -1 sets:ISAC Control System
 p 5444 447 250 0 -1 sett0:EPICS Area Schematic
 p 5444 355 250 0 -1 sett1:Off-line Ion Source - Vacuum System Devices
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 l 300 7 0 48 414 A

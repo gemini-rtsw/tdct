@@ -70,6 +70,7 @@ p 96 -708 100 0 0 pproc(SIOL):NPP
 p 96 -740 100 0 0 palrm(SIOL):NMS
 p 96 -772 100 0 0 def(SIOL):0.000000000000000e+00
 p 96 -804 100 0 0 typ(SIOL):path
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 448 64

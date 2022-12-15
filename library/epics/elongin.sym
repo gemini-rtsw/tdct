@@ -60,6 +60,7 @@ p -19 324 100 0 -1 username(U4):FLD4
 p -19 261 100 0 -1 username(U5):FLD5
 p -19 196 100 0 -1 username(U6):FLD6
 p -18 134 100 0 -1 username(U7):FLD7
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 r 0 32 -96 544 544

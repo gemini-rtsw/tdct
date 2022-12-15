@@ -95,6 +95,7 @@ p 704 -258 100 0 0 typ(U0):val
 p 704 -290 100 0 0 typ(U1):val
 p 704 -322 100 0 0 typ(U2):val
 p 704 -354 100 0 0 typ(U3):val
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 448 320

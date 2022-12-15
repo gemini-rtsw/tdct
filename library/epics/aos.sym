@@ -45,6 +45,7 @@ p 96 -100 100 0 0 typ(FLNK):path
 p 96 -132 100 0 0 typ(OUT):val
 p 96 -164 100 0 0 def(OUT):#C0 B0
 p 96 -196 100 0 0 typ(DOL):path
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 128 528

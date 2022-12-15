@@ -45,6 +45,7 @@ p 96 -582 100 0 0 pproc(OUT):NPP
 p 96 -614 100 0 0 palrm(OUT):NMS
 p 96 -646 100 0 0 def(OUT):0.000000000000000e+00
 p 96 -678 100 0 0 typ(OUT):path
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 c 0 256 304

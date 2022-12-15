@@ -47,6 +47,7 @@ p 553 166 100 0 -1 username(U0):FLD0
 p 553 102 100 0 -1 username(U1):FLD1
 p 553 38 100 0 -1 username(U2):FLD2
 p 552 -26 100 0 -1 username(U3):FLD3
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 r 0 32 -96 544 480

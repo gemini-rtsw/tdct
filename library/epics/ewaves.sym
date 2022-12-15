@@ -37,6 +37,7 @@ p 96 -228 100 0 0 pproc(SDIS):NPP
 p 96 -228 100 0 0 palrm(SDIS):NMS
 p 96 -324 100 0 0 def(INP):0.000000000000000e+00
 p 96 -358 100 0 0 typ(INP):val
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 c 0 288 352

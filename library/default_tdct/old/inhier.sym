@@ -7,6 +7,7 @@ uniq 5
 p -64 96 100 0 0 model:connector
 p -64 64 100 0 0 revision:2.2
 p 0 128 100 0 0 IO:input
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 32 208

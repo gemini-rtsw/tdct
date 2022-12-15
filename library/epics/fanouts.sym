@@ -29,6 +29,7 @@ p 96 -388 100 0 0 typ(LNK5):path
 p 96 -420 100 0 0 def(LNK5):0.000000
 p 96 -452 100 0 0 typ(LNK6):path
 p 96 -484 100 0 0 def(LNK6):0.000000
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 32 208

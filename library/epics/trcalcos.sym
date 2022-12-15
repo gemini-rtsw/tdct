@@ -120,6 +120,7 @@ p 0 0 60 0 0 typ(INPL):path
 p 0 0 60 0 0 typ(OUT):path
 p 0 0 60 0 0 typ(SDIS):path
 p 0 0 60 0 0 typ(TSEL):path
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 l 150 0 0 64 -112 TR

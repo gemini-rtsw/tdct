@@ -44,6 +44,7 @@ p 96 -580 100 0 0 typ(SELL):path
 p 96 -612 100 0 0 def(SELL):0.000000000000000e+00
 p 96 -644 100 0 0 pproc(SELL):NPP
 p 96 -676 100 0 0 palrm(SELL):NMS
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 304 176

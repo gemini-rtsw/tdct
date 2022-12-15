@@ -11,6 +11,7 @@ p 2384 128 100 0 -1 pages:
 p 2000 96 100 0 0 primitive:eborderB
 p 2048 128 100 0 -1 revision:$Revision: 1.1.1.1 $
 p 2000 240 150 768 -1 system:
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 l 200 7 0 2004 140 B

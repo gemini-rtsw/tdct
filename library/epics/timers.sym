@@ -41,6 +41,7 @@ p 161 -184 100 0 0 typ(OUT):val
 p 161 -219 100 0 0 typ(TORG):path
 p 161 -251 100 0 0 def(TORG):0.000000
 p 329 197 100 0 -1 username(U0):FLD0
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 a 0 256 256 256 304 360

@@ -8,6 +8,7 @@ p 192 446 100 0 -1 Type:permissive
 p 96 382 100 0 1 Node:nodename
 p 96 318 100 0 1 DESC:permissive record
 p 96 286 100 0 1 LABL:label
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 r 0 32 256 416 480

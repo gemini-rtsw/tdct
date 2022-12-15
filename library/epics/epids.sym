@@ -54,6 +54,7 @@ p 96 -260 100 0 0 def(STPL):0.000000000000000e+00
 p 96 -292 100 0 0 typ(STPL):path
 p 96 -292 100 0 0 pproc(STPL):NPP
 p 96 -292 100 0 0 palrm(STPL):NMS
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 a 0 192 288 192 304 360

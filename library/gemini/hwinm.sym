@@ -7,6 +7,7 @@ uniq 27
 p 654 536 100 0 0 primitive:hwin
 p 654 504 100 0 0 typ(in):val
 p 547 568 100 0 -1 val(in):#C0 B0
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 768 576

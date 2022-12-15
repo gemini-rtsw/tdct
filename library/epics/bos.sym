@@ -28,6 +28,7 @@ p 208 446 100 0 0 primitive:bo
 p 96 -196 100 0 0 typ(DOL):path
 p 96 -100 100 0 0 typ(FLNK):path
 p 96 -132 100 0 0 typ(INP):val
+p 304 256 100 1024 0 name:$(top)$(I)
 [layers]
 <symbol>
 v 0 0 208
