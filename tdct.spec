@@ -20,7 +20,7 @@
 Summary: tdct for editing schematics for EPICS
 Name: %{name}
 Version: 2.18.6
-Release: 2%{?dist}
+Release: 4%{?dist}
 License: Proprietary
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
@@ -63,4 +63,56 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Dec 30 2025 Matt Rippa <matt.rippa@noirlab.edu> 2.18.6-4
+- SYSCO-745: Add TDCT eapply20 support
+- create unstable/2024q4 release
+- create unstable/2024q3 release :
+- setting git push options to be able to build on my local pipeline
+- creating release unstable/2024q2 - also for testing gem-ci on hbfade
+- update gem-ci because of nsf-noirlab/gemini/rtsw/gem-ci#60
+- create unstable/2024q1 release
+- make master the HEAD again, only small changes regarding gem-ci will be
+  merged
+- updated to gem-ci submodule to point to master branch
+- edit BASE_CONTAINER to rockylinux8
+- update gem-ci for fixed create-config.sh script
+- updated gem-ci to newest version for pipeline testing
+- create unstable/fkraemer-gemci-test-other release for gem-ci tests
+- create unstable/2023q2 and update gem-ci to unstable/2023q2
+- created unstable/2023q1-tr2 branch, updated gem-ci to point to
+  unstable/2023q1
+- Ran patch for tdct name issue
+- update gem-ci to unstable/2022q4
+- upgraded gem-ci for new tito builder and pipeline
+- Prep for unstable/2022q1: git checkout stable/2021q4; git pull -ff-only; git
+  checkout unstable/2022q1; gem-init-project-f -b stable/2021q4
+- Update gem-ci for latest fix
+- Updated to latest gem-ci and set to gem-ci/stable/2021q4
+
+* Tue Dec 30 2025 Matt Rippa <matt.rippa@noirlab.edu>
+- SYSCO-745: Add TDCT eapply20 support
+- create unstable/2024q4 release
+- create unstable/2024q3 release :
+- setting git push options to be able to build on my local pipeline
+- creating release unstable/2024q2 - also for testing gem-ci on hbfade
+- update gem-ci because of nsf-noirlab/gemini/rtsw/gem-ci#60
+- create unstable/2024q1 release
+- make master the HEAD again, only small changes regarding gem-ci will be
+  merged
+- updated to gem-ci submodule to point to master branch
+- edit BASE_CONTAINER to rockylinux8
+- update gem-ci for fixed create-config.sh script
+- updated gem-ci to newest version for pipeline testing
+- create unstable/fkraemer-gemci-test-other release for gem-ci tests
+- create unstable/2023q2 and update gem-ci to unstable/2023q2
+- created unstable/2023q1-tr2 branch, updated gem-ci to point to
+  unstable/2023q1
+- Ran patch for tdct name issue
+- update gem-ci to unstable/2022q4
+- upgraded gem-ci for new tito builder and pipeline
+- Prep for unstable/2022q1: git checkout stable/2021q4; git pull -ff-only; git
+  checkout unstable/2022q1; gem-init-project-f -b stable/2021q4
+- Update gem-ci for latest fix
+- Updated to latest gem-ci and set to gem-ci/stable/2021q4
+
 
