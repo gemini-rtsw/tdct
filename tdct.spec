@@ -27,7 +27,7 @@ Source0: %{name}-%{version}.tar.gz
 ExclusiveArch: %{arch}
 Prefix: %{_prefix}
 BuildRequires: java-1.8.0-openjdk
-Requires: java-1.8.0-openjdk java-1.8.0-openjdk-headless.x86_64
+Requires: java-1.8.0-openjdk java-1.8.0-openjdk-headless
 
 
 %description
