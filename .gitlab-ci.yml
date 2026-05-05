@@ -16,5 +16,4 @@ variables:
     # For all other projects (where essentially only an RPM is build and deployed
     # to one of the repos defined by the three/four types of projects above) this
     # setting is derived from the branch name
-    BASE_CONTAINER: "registry.gitlab.com/nsf-noirlab/gemini/rtsw/gem-ci/thirdparty/rockylinux:8"
-    RPM_SEMVER_BASE: "2.18.6"
+    BASE_CONTAINER: "registry.gitlab.com/nsf-noirlab/gemini/rtsw/gem-ci/common_unstable/2026q3"
