@@ -33,6 +33,13 @@ Requires: java-1.8.0-openjdk java-1.8.0-openjdk-headless
 %description
 EPICS is a set of Open Source software tools, Vlibraries and applications developed collaboratively and used worldwide to create distributed soft real-time control systems for scientific instruments such as a particle accelerators, telescopes and other large scientific experiments. TDCT is used to edit and create schematics describing databases for EPICS.
 
+%package devel
+Summary: %{name}-devel Package
+Group: Development/Gemini
+Requires: %{name}
+%description devel
+This is the devel metapackage for %{name}.
+
 %prep
 %setup -q
 
@@ -60,6 +67,9 @@ rm -rf %{buildroot}
 %dir /%{_prefix}/%{name}
 /%{_prefix}/%{name}/*
 /gem_base/etc/tdct.*
+
+%files devel
+%defattr(-,root,root)
 
 
 %changelog
