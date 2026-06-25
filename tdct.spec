@@ -20,7 +20,7 @@
 Summary: tdct for editing schematics for EPICS
 Name: %{name}
 Version: 2.18.6
-Release: 4%{?dist}
+Release: 5%{?dist}
 License: Proprietary
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
@@ -73,6 +73,11 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Jun 25 2026 Hawi Stecher <hawi.stecher@noirlab.edu> 2.18.6-5
+- Migrate CI to GitHub Actions (gemini-rtsw-ci)
+- Add %package devel section for the gem-ci dev container build
+- Fix empty OCAL default in ecalcouts symbol
+
 * Tue Dec 30 2025 Matt Rippa <matt.rippa@noirlab.edu> 2.18.6-4
 - SYSCO-745: Add TDCT eapply20 support
 - create unstable/2024q4 release
